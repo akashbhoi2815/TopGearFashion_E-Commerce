@@ -31,7 +31,7 @@
  }
  .img-card > div {
     width: 96%;
-    overflow: hidden;
+    /* overflow: hidden; */
     cursor: pointer;
  }
  
@@ -171,4 +171,47 @@
     margin-left: 4%;
     font-size: 12px;
  }
- 
+ @media only screen and (max-width: 855px) {
+ .img-card {
+   width: 58%;
+   height: 1022px;
+   overflow: auto;
+   display: grid;
+   grid-template-columns: repeat(1, 1fr);
+ }
+   .img-card::-webkit-scrollbar {
+      width: 3px;
+    }
+    
+    .img-card::-webkit-scrollbar-track {
+      background-color: rgb(209, 209, 209);
+    }
+    
+    .img-card::-webkit-scrollbar-thumb {
+      background-color: rgb(40, 39, 39);
+    }
+   .details-card {
+      width: 38%;
+   }
+ }
+ @media only screen and (max-width: 745px) {
+   .container {
+      display: flex;
+      flex-direction: column;
+   }
+   .img-card {
+      width: 95%;
+      margin: auto;
+      height: 845px;
+   }
+   .details-card {
+      width: 95%;
+      margin-top: 20px;
+   }
+ }
+ @media only screen and (max-width: 550px) {
+   .details-card {
+      width: 95%;
+      margin-top: 10px;
+   }
+ }

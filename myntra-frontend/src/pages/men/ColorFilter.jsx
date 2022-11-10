@@ -1,7 +1,7 @@
 import { Box, Heading } from '@chakra-ui/react';
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from 'react-router-dom'
-
+import colorStyle from './filter.module.css'
 const ColorFilter = () => {
     const [searchParams,setSearchParams]=useSearchParams();
     const initialColorParams = searchParams.getAll("");
@@ -32,7 +32,7 @@ const ColorFilter = () => {
     
     <Box >
        
-       <Box display={"flex"} flexDir="column" alignItems={"baseline"}>
+       <Box className={colorStyle.main}>
        <Heading>COLOR</Heading>
        <Box>
           <input 

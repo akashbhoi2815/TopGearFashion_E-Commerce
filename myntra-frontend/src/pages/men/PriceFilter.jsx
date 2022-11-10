@@ -1,14 +1,7 @@
 import { Box, Heading } from '@chakra-ui/react';
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from 'react-router-dom';
-/**
- * 
- *  Rs. 149 to Rs. 2612(78378)
-Rs. 2612 to Rs. 5075(1694)
-Rs. 5075 to Rs. 7538(80)
-Rs. 7538 to Rs. 10001(17
- */
-
+import priceStyle from './filter.module.css'
 const PriceFilter = () => {
     const [searchParams,setSearchParams]=useSearchParams();
     const initialPriceParams = searchParams.getAll("");
@@ -39,7 +32,7 @@ const PriceFilter = () => {
     
     <Box>
        
-       <Box display={"flex"} flexDir="column" alignItems={"baseline"}>
+       <Box className={priceStyle.main}>
        <Heading>PRICE</Heading>
        <Box>
           <input 

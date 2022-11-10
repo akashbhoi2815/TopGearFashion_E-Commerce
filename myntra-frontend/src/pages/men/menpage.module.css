@@ -1,0 +1,20 @@
+.container{
+    max-width: 100%;
+    padding: 2rem;
+}
+.leftSection{
+    min-width: 20%;
+    border-right: 1px solid gray;
+}
+.rightSection{
+    max-width: 75%;
+    border: 1px solid gray;
+}
+.sortSection{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.combineSection{
+    display: flex;
+
+}

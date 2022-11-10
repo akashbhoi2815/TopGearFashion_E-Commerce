@@ -1,6 +1,7 @@
 import { Box, Heading } from '@chakra-ui/react';
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from 'react-router-dom'
+import brandStyle from './filter.module.css'
 
 const BrandFilter = () => {
     const [searchParams,setSearchParams]=useSearchParams();
@@ -32,7 +33,7 @@ const BrandFilter = () => {
     
     <Box >
        
-       <Box display={"flex"} flexDir="column" alignItems={"baseline"}>
+       <Box className={brandStyle.main}>
        <Heading>BRAND</Heading>
        <Box>
           <input 

@@ -1,6 +1,7 @@
 import { Box, Heading } from '@chakra-ui/react';
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from 'react-router-dom'
+import categoryStyle from './filter.module.css'
 
 const CategoryFilter = () => {
     const [searchParams,setSearchParams]=useSearchParams();
@@ -32,7 +33,7 @@ const CategoryFilter = () => {
     
     <Box >
       
-       <Box display={"flex"} flexDir="column" alignItems={"baseline"}>
+       <Box className={categoryStyle.main}>
        <Heading>CATEGORIES</Heading>
        <Box >
           <input 

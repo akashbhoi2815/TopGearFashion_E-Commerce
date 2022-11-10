@@ -1,4 +1,4 @@
-import { Select } from "@chakra-ui/react";
+import { Box, Select } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
@@ -21,13 +21,13 @@ const Sort = () => {
 
 
   return (
-    <div >
-       <select name="sortBy" onChange={handleSortBy}>
-          <option value="">sortBy</option>
+    <Box >
+       <Select name="sortBy" onChange={handleSortBy}>
+          <option value="">Default</option>
           <option value="asc"  defaultChecked={sortBy === "asc"} >Ascending</option>
           <option value="desc" defaultChecked={sortBy === "desc"} >Descending</option>
-      </select> 
-    </div>
+      </Select> 
+    </Box>
   );
 };
 

@@ -1,0 +1,512 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .div1 {
+    height: 79px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .div1main {
+    height: 78px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    width: 60px;
+  }
+  
+  .div1b {
+    display: flex;
+    flex-direction: row;
+    letter-spacing: 3px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .bagGreen {
+    color: green;
+    text-decoration: underline;
+  }
+  
+  .greenTick {
+    height: 28px;
+    width: 26px;
+  }
+  
+  .div1c {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .div2 {
+    height: 1000px;
+    width: 100%;
+    border-top: 1px solid lightgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  
+    /* background-color: red; */
+  }
+  
+  .div2a {
+    height: 749px;
+    width: 614px;
+    border-right: solid 1px lightgray;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 15px 0 0;
+    /* margin: auto; */
+  }
+  
+  .div2a1 {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    justify-content: space-between;
+    padding: 14px;
+    margin: 10px 0 0 0;
+  }
+  
+  .offersList {
+    border: solid 1px lightgray;
+    border-radius: 5px;
+    margin: 10px 0 10px 0;
+  }
+  
+  .offers {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  li {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  
+  .discounts {
+    width: 30px;
+  }
+  .div2a3 .product1 {
+    width: 120px;
+  }
+  .div2a3 .product1 img {
+    width: 100%;
+  }
+  .div2a3 .ticks {
+    height: 18px;
+    width: 350px;
+  }
+  .div2a3 .ticks img {
+    height: 18px;
+    width: 18px;
+    /* width: 1005; */
+  }
+  .div2a3 {
+    display: flex;
+    flex-direction: column;
+  }
+  .div2a3 .itemSelected .btns button {
+    word-spacing: 1px;
+  
+    border: none;
+    background-color: white;
+  }
+  .div2a3 .itemSelected .btns button strong {
+    font-size: 14px;
+  }
+  .div2a3 .itemSelected .move button {
+    border-left: 1px solid black;
+  }
+  .div2b {
+    height: 602px;
+    width: 336px;
+    display: flex;
+    flex-direction: column;
+  }
+  #sdiv {
+    font-weight: 300px;
+    margin-bottom: 4px;
+    margin-left: 4px;
+  }
+  #sdiv li {
+    padding: 5px;
+    color: rgb(110, 108, 108);
+  }
+  .div2b1 {
+    height: 264px;
+    width: 320px;
+    padding: 24px 0 0 16px;
+  }
+  
+  .div2b2 {
+    height: 234px;
+    width: 320px;
+    padding: 20px 0 0 16px;
+  }
+  
+  .div2b1-donate {
+    height: 17px;
+    width: 320px;
+    font-size: 12px;
+    margin: 0 0 24px 0;
+  }
+  
+  .div2b1-help {
+    font-size: 14px;
+    font-weight: 700;
+    height: 20px;
+    width: 320px;
+  }
+  
+  .div2b1-amount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 15px 0 15px 0;
+  }
+  
+  .r10,
+  .r50,
+  .r100,
+  .rOther {
+    font-size: 14px;
+    font-weight: 600;
+    border: solid 1px lightgray;
+    border-radius: 40px;
+    padding: 10px;
+    height: 15px;
+  }
+  
+  .knowMore {
+    color: #ff3f6c;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .knowMore1 {
+    color: #ff3f6c;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    padding: 0 0 10px 30px;
+    cursor: pointer;
+  }
+  select {
+    cursor: pointer;
+  }
+  .addMore a {
+    border: none;
+    background-color: white;
+    padding-left: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+  }
+  .coupons1 {
+    font-size: 12px;
+    margin: 15px 0 15px 0;
+  }
+  
+  .coupons2 {
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .coupon-img {
+    width: 25px;
+  }
+  
+  .apply-cpn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .apply-btn {
+    height: 27px;
+    width: 68px;
+    border: 1px solid #ff3f6c;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ff3f6c;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .priceDetails {
+    margin: 5px 0 10px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(124, 120, 120);
+  }
+  
+  .totalMRP {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .applyCoupon {
+    color: #ff3f6c;
+    font-weight: 400;
+  }
+  
+  .finalTotal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 700;
+  }
+  
+  .noConvFee {
+    width: 320px;
+    margin: 0 0 0 16px;
+  }
+  
+  .green {
+    color: green;
+  }
+  
+  .bold {
+    font-weight: 700;
+  }
+  
+  .bg-gr {
+    background-color: lightgreen;
+  }
+  
+  .place-btn {
+    display: flex;
+    height: 40px;
+    width: 320px;
+    border-radius: 2px;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 15px;
+    background: #ff3f6c;
+    /* padding: 10px 10px; */
+    letter-spacing: 1px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 16px;
+  }
+  
+  .address {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .del-to {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  
+  .del-add {
+    font-size: 12px;
+    font-weight: 300;
+  }
+  
+  .chng-add {
+    height: 35px;
+    width: 135.016px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #ff3f6c;
+    color: #ff3f6c;
+    background-color: #ffffff;
+    font-weight: 600;
+    border-radius: 6px;
+    font-size: 12px;
+  }
+  
+  .hr {
+    margin-top: 20px;
+    border: 1px solid lightgray;
+  }
+  
+  .hr2 {
+    margin-top: 15px;
+    border: 1px solid lightgray;
+  }
+  
+  #showDiv {
+    display: none;
+  }
+  
+  .green-txt {
+    color: rgb(8, 199, 8);
+  }
+  
+  .itemSelected {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5px 20px 5px;
+  }
+  
+  .remove {
+    font-size: 12px;
+    line-height: 16px;
+    border-right: solid 2px gray;
+    margin-left: 200px;
+    padding-right: 25px;
+  }
+  
+  .move {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  
+  .product {
+    display: flex;
+    flex-direction: row;
+    border: solid 1px lightgray;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .product1 {
+    padding: 2px 10px 2px 2px;
+  }
+  
+  .product2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .p1 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  
+  .p2 {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  
+  .p3 {
+    font-size: 12px;
+    font-weight: 400;
+  }
+  
+  .addMore {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: solid 1px lightgray;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  input[type="checkbox"]:checked {
+    text-decoration: #ff3f6c;
+    color: #ff3f6c;
+    background-color: #ff3f6c;
+  }
+  
+  .red-txt {
+    color: #ff3f6c;
+  }
+  
+  .tick {
+    width: 12px;
+  }
+  
+  .wish {
+    width: 15px;
+  }
+  
+  button {
+    background-color: white;
+  }
+  
+  .applyCoupon,
+  .place-btn {
+    border: none;
+    cursor: pointer;
+  }
+  #coppon-change {
+    width: 441px;
+    max-width: 441px;
+    position: fixed;
+    display: block;
+  
+    height: 480px;
+    border: 1px solid #d4d5d9;
+    margin-left: 40%;
+  
+    margin-top: -880px;
+    background-color: white;
+    display: none;
+  }
+  #coppon-change > div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+  #coppon-change > div:nth-child(1) button {
+    height: 40px;
+    display: block;
+    margin-bottom: auto;
+    margin-top: auto;
+  }
+  
+  #coppon-change > div:nth-child(3) {
+    background-color: rgb(190, 189, 189);
+  }
+  #coppon-change > div:nth-child(3) > div {
+    margin-bottom: 10px;
+  
+    padding: 10px;
+    background-color: white;
+  }
+  #coppon-change > div:nth-child(4) button {
+    width: 100%;
+    height: 40px;
+    margin-top: 40px;
+    background-color: #ff3f6c;
+    border: none;
+  }

@@ -1,7 +1,7 @@
 const mongoose=require("mongoose");
 
-const MenSchema=mongoose.Schema({
-    Idno:{type:Number},
+const WomenSchema=mongoose.Schema({
+    Idno:{type:String},
     categories:{type:String},
     // size:{type:String},
     title:{type:String},
@@ -17,6 +17,6 @@ const MenSchema=mongoose.Schema({
     rating:{type:Number}
 })
 
-const MensModel=mongoose.model("men",MenSchema);
+const WomenModel=mongoose.model("women",WomenSchema);
 
-module.exports={MensModel}
+module.exports={WomenModel}

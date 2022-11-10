@@ -4,6 +4,8 @@ const bcrypt=require("bcrypt")
 const jwt=require("jsonwebtoken");
 const connection = require("./config/db");
 const { UsersModel } = require("./Model/Users.model");
+const { menRouter } = require("./routes/Men.route");
+const { womenRouter } = require("./routes/Women.route");
 const app=express();
 app.use(express.json());
 app.use(cors());
@@ -61,6 +63,9 @@ app.get("/users",async(req,res)=>{
     const usersData=await UsersModel.find();
     res.send(usersData)
 })
+
+app.use("/tgf",menRouter);
+app.use("/tgf",womenRouter)
 app.listen(8000,async()=>{
     try{
         await connection,

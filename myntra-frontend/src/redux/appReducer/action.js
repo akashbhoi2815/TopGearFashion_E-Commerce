@@ -9,7 +9,7 @@ const getMenRequest = ( )=>{
 
 export const getMenData = (params)=>(dispatch)=>{
      dispatch(getMenRequest())
-     return axios.get("",params)
+     return axios.get("https://topgearfashion.onrender.com/tgf/mensdata",params)
        .then((r)=>{
         return dispatch({
             type:types.GETMEN_SUCCESS,

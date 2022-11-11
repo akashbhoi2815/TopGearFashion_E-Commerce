@@ -12,14 +12,40 @@ import {
   Heading,
   Text,
   useColorModeValue,
-  Link,
   Select,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-
+import { useDispatch, useSelector } from "react-redux";
+import { login } from '../redux/authReducer/action';
+import { useNavigate, Link } from "react-router-dom";
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
+
+  const [state, setState] = useState({
+    email: "",
+    password: ""
+  });
+
+  const currentUser =  useSelector((store)=>store.authReducer.currentUser)
+  
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { email, password  } = state;
+
+  const handleOnchange = (e) => {
+    const { name, value } = e.target;
+    setState({ ...state, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(login(state)).then((data)=>{
+      console.log("data",data)
+    })
+    // setState({email:"",password:"",name:"",mobile:"",gender=""})
+   
+  };
 
   return (
     <Box  border={"1px solid teal"}>
@@ -44,16 +70,29 @@ export default function Login() {
           boxShadow={'lg'}
           p={8}>
           <Stack spacing={4}>
-            <form >
+            <form onSubmit={handleSubmit} >
             <FormControl id="email" isRequired>
               <FormLabel>Email address</FormLabel>
-              <Input type="email" />
+              <Input 
+                  type="email"
+                  placeholder=""
+                  name="email"
+                  value={email}
+                  onChange={handleOnchange}
+                  required
+               />
             </FormControl>
 
             <FormControl id="password" isRequired>
               <FormLabel>Password</FormLabel>
               <InputGroup>
-                <Input type={showPassword ? 'text' : 'password'} />
+                <Input 
+                type={showPassword ? 'text' : 'password'} 
+                placeholder=""
+                name="password"
+                value={password}
+                onChange={handleOnchange}
+                required/>
                 <InputRightElement h={'full'}>
                   <Button
                     variant={'ghost'}
@@ -65,7 +104,6 @@ export default function Login() {
                 </InputRightElement>
               </InputGroup>
             </FormControl>
-
             <Stack spacing={10} pt={2}>
                <Input
                   type="submit"

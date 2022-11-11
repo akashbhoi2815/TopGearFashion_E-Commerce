@@ -1,40 +1,49 @@
-import * as types from './actionTypes';
+import * as types from "./actionTypes";
 
-const initState={
-   isAuth:false,
-   token:'',
-   isLoading:false,
-   isError:false,
-}
+const initialState = {
+  isLoading: false,
+  isError: false,
+  currentUser: null,
+};
 
-export const authReducer=(oldState=initState,{type,payload})=>{
-   switch(type){
-       case types.USER_LOGIN_REQUEST:{
-           return{
-               ...oldState,
-               isLoading:true
-           }
-       } 
-       case types.USER_LOGIN_SUCCESS:{
-           return{
-               ...oldState,
-               isLoading:false,
-               isError:false,
-               isAuth:true,
-               token:payload
-           }
-       }
-       case types.USER_LOGIN_FAILURE:{
-           return{
-               ...oldState,
-               isAuth:false,
-               isLoading:false,
-               token:"",
-               isError:true,
-           }
-       }
+const authReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case types.LOGIN_REQUEST:
+    case types.SIGNUP_REQUEST:
+    case types.LOGOUT_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case types.LOGOUT_SUCCESS:
+      return {
+        ...state,
+        currentUser: null,
+      };
+      case types.SET_USER:
+      return{
+        ...state,
+        isLoading:false,
+        currentUser:action.payload
+      }
+    case types.SIGNUP_SUCCESS:
+    case types.LOGIN_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        currentUser: action.payload,
+      };
+    case types.SIGNUP_FAILURE:
+    case types.LOGIN_FAILURE:
+    case types.LOGOUT_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        isError: action.payload,
+      };
+    default:
+      return state;
+  }
+};
 
-       default:
-           return oldState
-   }
-}
+export default authReducer;

@@ -5,27 +5,25 @@ import brandStyle from './filter.module.css'
 
 const BrandFilter = () => {
     const [searchParams,setSearchParams]=useSearchParams();
-    const initialBrandParams = searchParams.getAll("");
-    const [brand, setBrand] = useState(initialBrandParams || []);
+    const initialBrandParams = searchParams.getAll("brand");
+    const [brands, setBrands] = useState(initialBrandParams || []);
 
     const handleChange = (e) => {
         const option = e.target.value;
-        let newBrand = [...brand];
-        if(brand.includes(option)){
-            newBrand.splice(newBrand.indexOf(option),1);
+        let newBrands = [...brands];
+        if(brands.includes(option)){
+            newBrands.splice(newBrands.indexOf(option),1);
         }else{
-            newBrand.push(option);
+            newBrands.push(option);
         }
-        setBrand(newBrand);
+        setBrands(newBrands);
     }
   
     useEffect(() => {
-     if(brand){
-        const params = {};
-        brand && (params._ == brand);
-        setSearchParams(params);
+     if(brands){
+      setSearchParams({ brand: brands});
      }
-    }, [brand,setSearchParams])
+    }, [brands,setSearchParams])
     
 
 
@@ -39,49 +37,49 @@ const BrandFilter = () => {
           <input 
             type="checkbox"
             value={"Roadster"}
-            // defaultChecked={brand.inclueds("Roadster")}
+            defaultChecked={brands.includes("Roadster")}
             onChange={handleChange}  />
             <label>Roadster</label>
        </Box>
        <Box>
           <input 
             type="checkbox"
-            value={"Puma"}
-            // defaultChecked={brand.inclueds("Puma")}
+            value={"HRX"}
+            defaultChecked={brands.includes("HRX")}
             onChange={handleChange}  />
-            <label>Puma</label>
+            <label>HRX</label>
        </Box>
        <Box>
           <input 
             type="checkbox"
-            value={"WROGN"}
-            // defaultChecked={brand.inclueds("WROGN")}
+            value={"Street Armor by Pantaloons"}
+            defaultChecked={brands.includes("Street Armor by Pantaloons")}
             onChange={handleChange}  />
-            <label>WROGN</label>
+            <label>Street Armor by Pantaloons</label>
        </Box>
        <Box>
           <input 
             type="checkbox"
-            value={"max"}
-            // defaultChecked={brand.inclueds("max")}
+            value={"indus route by Pantaloons"}
+            defaultChecked={brands.includes("indus route by Pantaloons")}
             onChange={handleChange}  />
-            <label>max</label>
+            <label>Indus route by Pantaloons</label>
        </Box>
        <Box>
           <input 
             type="checkbox"
-            value={"U.S. Polo Assn."}
-            // defaultChecked={brand.inclueds("U.S. Polo Assn.")}
+            value={"Celfie Design"}
+            defaultChecked={brands.includes("Celfie Design")}
             onChange={handleChange}  />
-            <label>U.S. Polo Assn.</label>
+            <label>Celfie Design</label>
        </Box>
        <Box>
           <input 
             type="checkbox"
-            value={"Friskers"}
-            // defaultChecked={brand.inclueds("Friskers")}
+            value={"Mast & Harbour"}
+            defaultChecked={brands.includes("Mast & Harbour")}
             onChange={handleChange}  />
-            <label>Friskers</label>
+            <label>Mast & Harbour</label>
        </Box>
        </Box>
     </Box>

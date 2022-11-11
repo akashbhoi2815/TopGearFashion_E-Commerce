@@ -1,7 +1,7 @@
 import * as types from './actionTypes'
 
 const initState={
-    men_data:[],
+    mensdata:[],
     isLoading:false,
     isError:false
 }
@@ -18,7 +18,7 @@ export const appReducer=(oldState=initState,{type,payload})=>{
         case types.GETMEN_SUCCESS:{
             return{
                 ...oldState,
-                men_data:payload,
+                mensdata:payload,
                 isLoading:false,
                 isError:false
             }

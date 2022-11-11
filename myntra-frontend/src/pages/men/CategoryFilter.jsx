@@ -5,8 +5,9 @@ import categoryStyle from './filter.module.css'
 
 const CategoryFilter = () => {
     const [searchParams,setSearchParams]=useSearchParams();
-    const initialCategoryParams = searchParams.getAll("");
+    const initialCategoryParams = searchParams.getAll("categories");
     const [category, setCategory] = useState(initialCategoryParams || []);
+    
 
     const handleChange = (e) => {
         const option = e.target.value;
@@ -18,11 +19,11 @@ const CategoryFilter = () => {
         }
         setCategory(newCategory);
     }
-  
+  console.log('category: ', category);
     useEffect(() => {
      if(category){
         const params = {};
-        category && (params._ == category);
+        category && (params.categories = category);
         setSearchParams(params);
      }
     }, [category,setSearchParams])
@@ -38,8 +39,8 @@ const CategoryFilter = () => {
        <Box >
           <input 
             type="checkbox"
-            value={"Tshirts"}
-            // defaultChecked={category.inclueds("Tshirts")}
+            value={"tshirt"}
+            defaultChecked={category.includes("tshirt")}
             onChange={handleChange}  />
             <label>Tshirts</label>
        </Box>
@@ -47,7 +48,7 @@ const CategoryFilter = () => {
           <input 
             type="checkbox"
             value={"Lounge Tshirts"}
-            // defaultChecked={category.inclueds("Lounge Tshirts")}
+            defaultChecked={category.includes("Lounge Tshirts")}
             onChange={handleChange}  />
             <label>Lounge Tshirts</label>
        </Box>

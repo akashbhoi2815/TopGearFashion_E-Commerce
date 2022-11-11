@@ -7,7 +7,7 @@
     border-right: 1px solid gray;
 }
 .rightSection{
-    max-width: 75%;
+    width:75%;
     border: 1px solid gray;
 }
 .sortSection{
@@ -17,4 +17,10 @@
 .combineSection{
     display: flex;
 
+}
+.mensdata_details{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:auto;
+    gap: 20px;
 }

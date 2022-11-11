@@ -89,35 +89,6 @@ const Bag = () => {
             </div>
          </div>
          <div class="right-block">
-            <div class="donationStrip-container">
-               <p class="donationStrip-Header">DONATE FOR COVID-19 RELIEF</p>
-               <div class="donationStrip-Body">
-                  <div class="donationStrip-title flex">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" class="donationStrip-icon">
-                        <path
-                           fill-rule="nonzero"
-                           d="M14.85 2.14v11.71a1 1 0 0 1-1 1H2.14a1 1 0 0 1-1-1V2.14a1 1 0 0 1 1-1h11.71a1 1 0 0 1 1 1zM14.222 0H1.778C.8 0 0 .8 0 1.778v12.444C0 15.2.8 16 1.778 16h12.444C15.2 16 16 15.2 16 14.222V1.778C16 .8 15.2 0 14.222 0z"
-                        ></path>
-                     </svg>
-                     <span class="">Help India fight COVID-19</span>
-                  </div>
-                  <div class="donationStrip-pill">
-                     <div class="pillView-pill" data-key="10">
-                        <div class="pillView-textStyle" data-key="10">₹10</div>
-                     </div>
-                     <div class="pillView-pill" data-key="50">
-                        <div class="pillView-textStyle" data-key="50">₹50</div>
-                     </div>
-                     <div class="pillView-pill" data-key="100">
-                        <div class="pillView-textStyle" data-key="100">₹100</div>
-                     </div>
-                     <div class="pillView-pill">
-                        <input class="donationStrip-input" type="tel" maxlength="4" placeholder="Other" />
-                     </div>
-                  </div>
-                  <div class="donationStrip-KnowMore KnowMore">Know More</div>
-               </div>
-            </div>
             <div class="coupons-container">
                <p class="coupons-header">COUPONS</p>
                <div class="coupons-content flex">

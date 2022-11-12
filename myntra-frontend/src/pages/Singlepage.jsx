@@ -1,6 +1,5 @@
 import React from 'react'
 import "../css/Singlepage.css"
-
 const Singlepage = () => {
   return (
     <>

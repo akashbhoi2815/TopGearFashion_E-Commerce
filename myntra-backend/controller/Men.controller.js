@@ -5,6 +5,11 @@ const getMenData=async(req,res)=>{
     res.send(menData)
 }
 
+const getBrand=async(req,res)=>{
+    const brandData=await MensModel.find({brand:req.params.brand});
+    res.send(brandData)
+}
+
 const postMensData=async(req,res)=>{
     const {Idno,categories,title,price,gender,sizes,description,brand,color,discount,off_price,images,rating}=req.body
     const data=new MensModel(req.body);
@@ -19,6 +24,7 @@ const postMensData=async(req,res)=>{
 
 const MensDataController={
     getMenData,
+    getBrand,
     postMensData
 }
 

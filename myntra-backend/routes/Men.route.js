@@ -6,6 +6,8 @@ menRouter.use(express.json());
 
 menRouter.get("/mensdata",MensDataController.getMenData);
 
+menRouter.get("/mensdata/:brand",MensDataController.getBrand);
+
 menRouter.post("/create",MensDataController.postMensData);
 
 module.exports={menRouter}

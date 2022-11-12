@@ -1,7 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom';
+import { getMenData } from '../redux/appReducer/action';
 import styled from "styled-components"
 
 const Payment = () => {
+   const { id } = useParams();
+   const mendata = useSelector((store)=>store.appReducer.mensdata);
+   const [currentData, setCurrentData] = useState({})
+   const dispatch = useDispatch()
+   console.log('mendata: ',id, mendata);
+
+ useEffect(() => {
+   if(mendata.length === 0){
+     dispatch(getMenData)
+   }
+ }, [dispatch,mendata.length])
+
+ useEffect(() => {
+   if(id){
+     const current = mendata.find((e)=> e.Idno ==+id);
+     current && setCurrentData(current)
+   }
+ }, [id,mendata])
+ console.log('currentData: ', currentData);
+
   return (
    <>
    <Container>
@@ -81,37 +104,37 @@ const Payment = () => {
          </div>
           {/* Right Block  */}
          <div class="right-block">
-            <div class="priceBlock-container">
-               <p class="priceBlock-priceHeader">PRICE DETAILS</p>
-               <div class="priceBreakUp-orderSummary">
-                  <div class="priceDetail-row">
-                     <span>Total MRP</span>
-                     <span class="priceDetail-value actual-price">-</span>
-                  </div>
-                  <div class="priceDetail-row">
-                     <span>Discount on MRP</span>
-                     <span class="priceDetail-value discount-price teal-1">-</span>
-                  </div>
-                  <div class="priceDetail-row">
-                     <span>Coupon Discount</span>
-                     <span class="priceDetail-value applyCoupon">-</span>
-                  </div>
-                  <div class="priceDetail-row">
-                     <span>COVID-19 Donation</span>
-                     <span class="priceDetail-value donation-price">-</span>
-                  </div>
-                  <div class="priceDetail-row">
-                     <span>Convenience Fee <span class="KnowMore">Know More</span></span>
-                     <span class="priceDetail-value convenience-price">-</span>
-                  </div>
-               </div>
-            </div>
-            <div class="total-container">
+         <div class="priceBlock-container">
+            <p class="priceBlock-priceHeader">PRICE DETAILS</p>
+            <div class="priceBreakUp-orderSummary">
                <div class="priceDetail-row">
-                  <span>Total Amount</span>
-                  <span class="priceDetail-total">-</span>
+                  <span>Total MRP</span>
+                  <span class="priceDetail-value actual-price">₹{currentData?.price}</span>
+               </div>
+               <div class="priceDetail-row">
+                  <span>Discount on MRP</span>
+                  <span class="priceDetail-value discount-price teal-1">₹{(+currentData?.price)-(+currentData?.off_price)}</span>
+               </div>
+               <div class="priceDetail-row">
+                  <span>Coupon Discount</span>
+                  <span class="priceDetail-value applyCoupon">0</span>
+               </div>
+               <div class="priceDetail-row">
+                  <span>COVID-19 Donation</span>
+                  <span class="priceDetail-value donation-price">₹10</span>
+               </div>
+               <div class="priceDetail-row">
+                  <span>Convenience Fee <span class="KnowMore">Know More</span></span>
+                  <span class="priceDetail-value convenience-price">₹99</span>
                </div>
             </div>
+         </div>
+         <div class="total-container">
+            <div class="priceDetail-row">
+               <span>Total Amount</span>
+               <span class="priceDetail-total">₹{+currentData?.price+99+10}</span>
+            </div>
+         </div>
             <p class="PaymentVerificationMsg">Varifying Payment...</p>
             <div class="orderbtn-container">
                <button class="order-btn">PLACE ORDER</button>

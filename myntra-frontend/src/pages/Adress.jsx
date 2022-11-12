@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useParams } from 'react-router-dom';
+import { getMenData } from '../redux/appReducer/action';
 import styled from "styled-components"
 
 const Adress = () => {
+   const { id } = useParams();
+   const mendata = useSelector((store)=>store.appReducer.mensdata);
+   const [currentData, setCurrentData] = useState({})
+   const dispatch = useDispatch()
+   console.log('mendata: ',id, mendata);
+
+ useEffect(() => {
+   if(mendata.length === 0){
+     dispatch(getMenData)
+   }
+ }, [dispatch,mendata.length])
+
+ useEffect(() => {
+   if(id){
+     const current = mendata.find((e)=> e.Idno ==+id);
+     current && setCurrentData(current)
+   }
+ }, [id,mendata])
+ console.log('currentData: ', currentData);
     return (
         <>
         <Container>
@@ -91,9 +113,9 @@ const Adress = () => {
                             </div>
                             <div id="checkbox">
                                 <input type="checkbox" name="" id="default-add" />
-                                <label for=""> Make this my defaul address</label>
+                                <label for=""> Make this my default address</label>
                             </div>
-                            <button id="submit">ADD ADDRESS</button>
+                            <Link to={`/menpage/address/address2/${currentData?.Idno}`}> <button id="submit">ADD ADDRESS</button></Link>
                         </form>
                     </div>
                 </div>
@@ -103,30 +125,30 @@ const Adress = () => {
             <div class="priceBreakUp-orderSummary">
                <div class="priceDetail-row">
                   <span>Total MRP</span>
-                  <span class="priceDetail-value actual-price">-</span>
+                  <span class="priceDetail-value actual-price">₹{currentData?.price}</span>
                </div>
                <div class="priceDetail-row">
                   <span>Discount on MRP</span>
-                  <span class="priceDetail-value discount-price teal-1">-</span>
+                  <span class="priceDetail-value discount-price teal-1">₹{(+currentData?.price)-(+currentData?.off_price)}</span>
                </div>
                <div class="priceDetail-row">
                   <span>Coupon Discount</span>
-                  <span class="priceDetail-value applyCoupon">-</span>
+                  <span class="priceDetail-value applyCoupon">0</span>
                </div>
                <div class="priceDetail-row">
                   <span>COVID-19 Donation</span>
-                  <span class="priceDetail-value donation-price">-</span>
+                  <span class="priceDetail-value donation-price">₹10</span>
                </div>
                <div class="priceDetail-row">
                   <span>Convenience Fee <span class="KnowMore">Know More</span></span>
-                  <span class="priceDetail-value convenience-price">-</span>
+                  <span class="priceDetail-value convenience-price">₹99</span>
                </div>
             </div>
          </div>
          <div class="total-container">
             <div class="priceDetail-row">
                <span>Total Amount</span>
-               <span class="priceDetail-total">₹458</span>
+               <span class="priceDetail-total">₹{+currentData?.price+99+10}</span>
             </div>
          </div>
       </div>

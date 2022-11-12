@@ -10,7 +10,7 @@ const Singlepage = () => {
    const mendata = useSelector((store)=>store.appReducer.mensdata);
    const [currentData, setCurrentData] = useState({})
    const dispatch = useDispatch()
- console.log('mendata: ',id, mendata);
+console.log('mendata: ',id, mendata);
 
  useEffect(() => {
    if(mendata.length === 0){
@@ -25,12 +25,12 @@ const Singlepage = () => {
      current && setCurrentData(current)
     }
  }, [id,mendata])
- console.log('currentData: ', currentData);
+ console.log('currentData: ', currentData.sizes);
 
   return (
     <>
     {/* Start  */}
-      <container>
+      <Container>
       <div class="container">
          <div class="img-card">
              <div>
@@ -188,14 +188,14 @@ const Singlepage = () => {
             </div>
          </div>
       </div>
-      </container>
+      </Container>
     </>
   )
 }
 
 export default Singlepage
 
-const container = styled.div`
+const Container = styled.div`
 @font-face {
    font-family: "Whitney";
    src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot");

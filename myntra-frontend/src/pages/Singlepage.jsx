@@ -1,10 +1,11 @@
 import React from 'react'
 import "../css/Singlepage.css"
+import styled from "styled-components"
 const Singlepage = () => {
   return (
     <>
     {/* Start  */}
-
+      <container>
       <div class="container">
          <div class="img-card">
              <div>
@@ -153,8 +154,229 @@ const Singlepage = () => {
             </div>
          </div>
       </div>
+      </container>
     </>
   )
 }
 
 export default Singlepage
+
+const container = styled.div`
+@font-face {
+   font-family: "Whitney";
+   src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot");
+   src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot?#iefix") format("embedded-opentype"),
+      url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.woff") format("woff"),
+      url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.ttf") format("truetype");
+   font-weight: 400;
+   font-display: swap;
+   font-style: normal;
+}
+* {
+   font-family: "Whitney";
+   padding: 0px;
+   margin: 2px;
+}
+hr{
+  border-top: 1px dotted #8c8b8b;
+}
+.container {
+   margin: 20px;
+   display: flex;
+   justify-content: space-between;
+}
+/* product Image CSS */
+.img-card {
+   width: 60%;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 15px;
+   height: fit-content;
+}
+.img-card > div {
+   width: 96%;
+   /* overflow: hidden; */
+   cursor: pointer;
+}
+
+.pdimg {
+   width: 100%;
+   background-size: cover;
+   transition: all 0.5s;
+}
+
+.img-card > div:hover .pdimg {
+   transform: scale(1.1);
+}
+
+/* Details Card CSS */
+.details-card {
+   width: 39%;
+}
+
+.pdtitle {
+   font-size: 24px;
+   font-weight: 700;
+   color: #282c3f;
+}
+
+.pdname {
+   font-size: 20px;
+   font-weight: 400;
+}
+
+.pdmorecolor {
+   height: 80px;
+}
+
+.pdmorecolor > img {
+   height: 100%;
+   cursor: pointer;
+}
+
+.price-card {
+   display: flex;
+   align-items: center;
+}
+/* Rating Desing */
+.rating-card {
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   border: 1px solid gainsboro;
+   width: fit-content;
+   padding: 0px 10px;
+   font-size: 14px;
+   margin: 15px 0px;
+}
+
+.sizebtn {
+   background-color: #fff;
+   color: #282c3f;
+   border: 1px solid #bfc0c6;
+   border-radius: 50px;
+   min-width: 40px;
+   height: 40px;
+   text-align: center;
+   cursor: pointer;
+}
+
+.sizebtn:hover {
+   border: 1px solid #ff3f6c;
+}
+
+.sizebtn-selected {
+   border: 1px solid #ff3f6c;
+   background-color: #fff;
+   color: #ff3f6c !important;
+   font-weight: 700;
+}
+
+.btn-card {
+   margin-top: 15px;
+   display: flex;
+   gap: 15px;
+   height: 45px;
+}
+
+.addtobag {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #ff3f6c;
+   border: none;
+   border-radius: 2px;
+   width: 45%;
+   color: white;
+   cursor: pointer;
+}
+.addtobag:hover {
+   background-color: #ff527b;
+}
+
+.addtowishlist {
+   background-color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid;
+   border-radius: 2px;
+   width: 35%;
+   cursor: pointer;
+}
+
+.pin {
+   border: 1px solid #d4d5d9;
+   width: fit-content;
+   border-radius: 5px;
+   padding: 0px 8px;
+   display: flex;
+   align-items: center;
+   margin-top: 15px;
+}
+.pin > input {
+   border: none;
+   height: 30px;
+   width: 8em;
+}
+
+.pin > input:focus {
+   outline: none;
+}
+
+#checkPin {
+   color: #ff3f6c;
+   cursor: pointer;
+}
+.offer-card {
+   margin-top: 10px;
+}
+.offer-card > ul > li {
+   margin-left: 4%;
+   font-size: 12px;
+}
+@media only screen and (max-width: 855px) {
+.img-card {
+  width: 58%;
+  height: 1022px;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+  .img-card::-webkit-scrollbar {
+     width: 3px;
+   }
+   
+   .img-card::-webkit-scrollbar-track {
+     background-color: rgb(209, 209, 209);
+   }
+   
+   .img-card::-webkit-scrollbar-thumb {
+     background-color: rgb(40, 39, 39);
+   }
+  .details-card {
+     width: 38%;
+  }
+}
+@media only screen and (max-width: 745px) {
+  .container {
+     display: flex;
+     flex-direction: column;
+  }
+  .img-card {
+     width: 95%;
+     margin: auto;
+     height: 845px;
+  }
+  .details-card {
+     width: 95%;
+     margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .details-card {
+     width: 95%;
+     margin-top: 10px;
+  }
+}
+`

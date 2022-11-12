@@ -1,9 +1,10 @@
 import React from 'react'
-import "../css/Adress.css"
+import styled from "styled-components"
 
 const Adress = () => {
     return (
         <>
+        <Container>
             <div class="">
                 <nav class="header">
                     <div class="logo"><a href="" class="myntraweb-sprite desktop-logo sprites-headerLogo"></a></div>
@@ -130,9 +131,327 @@ const Adress = () => {
          </div>
       </div>
     </div>
+    </Container>
         </>
     )
 }
 
 export default Adress
 
+const Container = styled.div`
+@font-face {
+    font-family: "Whitney";
+    src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot");
+    src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot?#iefix") format("embedded-opentype"),
+       url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.woff") format("woff"),
+       url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+ }
+ 
+ * {
+    font-family: "Whitney";
+    padding: 0px;
+    margin: 2px;
+ }
+ 
+ .container {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+ }
+ 
+ // product Image CSS 
+ .img-card {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    height: fit-content;
+ }
+ .img-card > div {
+    width: 96%;
+    overflow: hidden;
+    cursor: pointer;
+ }
+ 
+ .pdimg {
+    width: 100%;
+    background-size: cover;
+    transition: all 0.5s;
+ }
+ 
+ .img-card > div:hover .pdimg {
+    transform: scale(1.1);
+ }
+ 
+  // Details Card CSS 
+ .details-card {
+    width: 37%;
+ }
+ 
+ .pdtitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: #282c3f;
+ }
+ 
+ .pdname {
+    font-size: 20px;
+    font-weight: 400;
+ }
+ 
+ .pdmorecolor {
+    height: 80px;
+ }
+ 
+ .pdmorecolor > img {
+    height: 100%;
+    cursor: pointer;
+ }
+ 
+ .price-card {
+    display: flex;
+    align-items: center;
+ }
+ 
+ // Styles for Bag Page
+ .header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    border-bottom: 1px solid #f5f5f6;
+    letter-spacing: 2px;
+    font-weight: 600;
+ }
+ 
+ .header > .secureContainer,
+ .logo {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+ }
+ 
+ .header > .checkout-steps {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    font-size: 12px;
+ }
+ 
+ .divider {
+    border-top: 1px dashed #696b79;
+    height: 4px;
+    width: 30px;
+    margin-top: 10px;
+ }
+ 
+ .active {
+    color: #20bd99;
+    border-bottom: 2px solid #20bd99;
+ }
+ 
+ .block {
+    display: flex;
+    max-width: 70%;
+    margin: auto;
+    justify-content: space-between;
+ }
+ 
+ .block > .left-block {
+    width: 60%;
+    padding-right: 15px;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+ }
+ 
+ .block > .right-block {
+    width: 40%;
+    margin-left: 50px;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+ }
+ 
+ .addressStrip {
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid #eaeaec;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+ }
+ 
+ #form {
+    width: 100%;
+    margin-right: 30px;
+ }
+ 
+ input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #535665;
+    outline: none;
+ }
+ 
+ #city-state {
+    width: 100%;
+    display: flex;
+    margin-left: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+ }
+ 
+ #city-state > div {
+    width: 40%;
+    background-color: rgb(235, 234, 233);
+    height: 40px;
+ }
+ 
+ #save-address-as {
+    display: flex;
+    width: 33%;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
+ 
+ #save-address-as > div {
+    border: 1px solid black;
+    padding: 3px 10px;
+    border-radius: 20px;
+ }
+ 
+ #default-add {
+    width: auto;
+    margin-top: 6px;
+ }
+ 
+ #checkbox {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
+ 
+ #submit {
+    width: 106%;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #ff3f6c;
+    color: white;
+ }
+ 
+ .priceBlock-container {
+    position: relative;
+    border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 15px;
+ }
+ 
+ .priceBlock-priceHeader {
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 12px;
+    color: #535766;
+ }
+ 
+ .priceBreakUp-orderSummary {
+    font-size: 14px;
+    color: #282c3f;
+ }
+ 
+ .priceDetail-row {
+    display: flex;
+    justify-content: space-between;
+ }
+ 
+ .priceDetail-value {
+    font-weight: 500;
+ }
+ 
+ .total-container {
+    font-weight: 600;
+ }
+ 
+ .KnowMore {
+    color: #ff3f6c;
+    font-weight: 600;
+    cursor: pointer;
+    width: fit-content;
+    font-size: 14px;
+    margin-top: 10px;
+ }
+ 
+ .select {
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f6;
+    border: 0;
+ }
+ @media only screen and (max-width: 1000px) {
+    .block {
+        max-width: 90%;
+    }
+     .block > .left-block {
+        padding-top: 20px;
+     }
+     .block > .right-block {
+        margin-left: 30px;
+     }
+  }
+  @media only screen and (max-width: 700px) {
+    .block {
+        max-width: 95%;
+     }
+     .block > .left-block {
+        width: 60%;
+        padding-right: 15px;
+        padding-top: 40px;
+     }
+     .block > .right-block {
+        margin-left: 25px;
+        padding-top: 15px;
+     }
+     #submit{
+        margin-top: 0px;
+     }
+  }
+  @media only screen and (max-width: 600px) {
+    .block {
+        max-width: 95%;
+        display: flex;
+        flex-direction: column;
+     }
+     .block > .left-block {
+        width: 80%;
+        margin: auto;
+     }
+     .block > .right-block {
+        width: 90%;
+        margin: auto;
+     }
+     .header > .secureContainer,.logo {
+        width: 55%;
+     }
+    .header > .checkout-steps {
+        width: 80%;
+    }
+  }
+`

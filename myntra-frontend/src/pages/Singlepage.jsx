@@ -1,11 +1,10 @@
 import React from 'react'
-import "../css/Singlepage.css"
 import styled from "styled-components"
 const Singlepage = () => {
   return (
-    <>
+     <>
     {/* Start  */}
-      <container>
+      <Container>
       <div class="container">
          <div class="img-card">
              <div>
@@ -154,14 +153,14 @@ const Singlepage = () => {
             </div>
          </div>
       </div>
-      </container>
-    </>
+      </Container>
+    </> 
   )
 }
 
 export default Singlepage
 
-const container = styled.div`
+const Container = styled.div`
 @font-face {
    font-family: "Whitney";
    src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot");
@@ -185,7 +184,7 @@ hr{
    display: flex;
    justify-content: space-between;
 }
-/* product Image CSS */
+//  product Image CSS
 .img-card {
    width: 60%;
    display: grid;
@@ -209,7 +208,7 @@ hr{
    transform: scale(1.1);
 }
 
-/* Details Card CSS */
+//  Details Card CSS 
 .details-card {
    width: 39%;
 }
@@ -238,7 +237,7 @@ hr{
    display: flex;
    align-items: center;
 }
-/* Rating Desing */
+// rating design
 .rating-card {
    display: flex;
    align-items: center;

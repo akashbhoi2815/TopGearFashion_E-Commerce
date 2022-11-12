@@ -1,5 +1,4 @@
 import React from 'react'
-import "../css/Singlepage.css"
 import styled from "styled-components"
 const Singlepage = () => {
   return (

@@ -1,5 +1,4 @@
 import React from 'react'
-import "../css/Payment.css"
 import styled from "styled-components"
 
 const Payment = () => {

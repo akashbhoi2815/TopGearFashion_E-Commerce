@@ -1,5 +1,4 @@
 import React from 'react'
-import "../css/Adress2.css"
 import styled from "styled-components";
 
 const Adress2 = () => {

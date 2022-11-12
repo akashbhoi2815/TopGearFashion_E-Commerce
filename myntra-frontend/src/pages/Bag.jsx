@@ -1,5 +1,4 @@
 import React from 'react'
-import "../css/Bag.css"
 import styled from "styled-components"
 
 const Bag = () => {

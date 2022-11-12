@@ -2,9 +2,9 @@ import { Box, Heading } from '@chakra-ui/react';
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from 'react-router-dom'
 import colorStyle from './filter.module.css'
-const ColorFilter = () => {
+const Color = () => {
     const [searchParams,setSearchParams]=useSearchParams();
-    const initialColorParams = searchParams.getAll("");
+    const initialColorParams = searchParams.getAll("color");
     const [color, setColor] = useState(initialColorParams || []);
 
     const handleChange = (e) => {
@@ -21,7 +21,7 @@ const ColorFilter = () => {
     useEffect(() => {
      if(color){
         const params = {};
-        color && (params._ == color);
+        color && (params.color = color);
         setSearchParams(params);
      }
     }, [color,setSearchParams])
@@ -37,48 +37,48 @@ const ColorFilter = () => {
        <Box>
           <input 
             type="checkbox"
-            value={"Black"}
-            // defaultChecked={color.inclueds("Black")}
+            value={"black"}
+            defaultChecked={color.includes("black")}
             onChange={handleChange}  />
             <label>Black</label>
        </Box>
        <Box>
           <input 
             type="checkbox"
-            value={"Blue"}
-            // defaultChecked={color.inclueds("Blue")}
+            value={"pink"}
+            defaultChecked={color.includes("pink")}
             onChange={handleChange}  />
-            <label>Blue</label>
+            <label>Pink</label>
        </Box>
        <Box>
           <input 
             type="checkbox"
-            value={"White"}
-            // defaultChecked={color.inclueds("White")}
+            value={"white"}
+            defaultChecked={color.includes("white")}
             onChange={handleChange}  />
             <label>White</label>
        </Box>
        <Box>
           <input 
             type="checkbox"
-            value={"Navy Blue"}
-            // defaultChecked={color.inclueds("Navy Blue")}
+            value={"blue"}
+            defaultChecked={color.includes("blue")}
             onChange={handleChange}  />
-            <label>Navy Blue</label>
+            <label>Blue</label>
        </Box>
        <Box>
           <input 
             type="checkbox"
-            value={"Green"}
-            // defaultChecked={color.inclueds("Green")}
+            value={"yellow"}
+            defaultChecked={color.includes("yellow")}
             onChange={handleChange}  />
-            <label>Green</label>
+            <label>Yellow</label>
        </Box>
        <Box>
           <input 
             type="checkbox"
-            value={"Red"}
-            // defaultChecked={color.inclueds("Red")}
+            value={"red"}
+            defaultChecked={color.includes("red")}
             onChange={handleChange}  />
             <label>Red</label>
        </Box>
@@ -88,4 +88,4 @@ const ColorFilter = () => {
   )
 }
 
-export default ColorFilter;
+export default Color;

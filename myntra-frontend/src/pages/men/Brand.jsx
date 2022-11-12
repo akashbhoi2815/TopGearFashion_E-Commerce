@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from 'react-router-dom'
 import brandStyle from './filter.module.css'
 
-const BrandFilter = () => {
+const Brand = () => {
     const [searchParams,setSearchParams]=useSearchParams();
     const initialBrandParams = searchParams.getAll("brand");
     const [brands, setBrands] = useState(initialBrandParams || []);
@@ -31,39 +31,39 @@ const BrandFilter = () => {
     
     <Box >
        
-       <Box className={brandStyle.main}>
+       <Box display={"flex"} flexDir="column" alignItems={"baseline"} border={"1px solid gray"}>
        <Heading>BRAND</Heading>
        <Box>
           <input 
             type="checkbox"
-            value={"Roadster"}
-            defaultChecked={brands.includes("Roadster")}
+            value={"Clovia"}
+            defaultChecked={brands.includes("Clovia")}
             onChange={handleChange}  />
-            <label>Roadster</label>
+            <label>Clovia</label>
        </Box>
        <Box>
           <input 
             type="checkbox"
-            value={"HRX"}
-            defaultChecked={brands.includes("HRX")}
+            value={"Mast & Harbour"}
+            defaultChecked={brands.includes("Mast & Harbour")}
             onChange={handleChange}  />
-            <label>HRX</label>
+            <label>Mast & Harbour</label>
        </Box>
        <Box>
           <input 
             type="checkbox"
-            value={"Street Armor by Pantaloons"}
-            defaultChecked={brands.includes("Street Armor by Pantaloons")}
+            value={"Dressberry"}
+            defaultChecked={brands.includes("Dressberry")}
             onChange={handleChange}  />
-            <label>Street Armor by Pantaloons</label>
+            <label>Dressberry</label>
        </Box>
        <Box>
           <input 
             type="checkbox"
-            value={"indus route by Pantaloons"}
-            defaultChecked={brands.includes("indus route by Pantaloons")}
+            value={"HERE&NOW"}
+            defaultChecked={brands.includes("HERE&NOW")}
             onChange={handleChange}  />
-            <label>Indus route by Pantaloons</label>
+            <label>HERE&NOW</label>
        </Box>
        <Box>
           <input 
@@ -76,10 +76,10 @@ const BrandFilter = () => {
        <Box>
           <input 
             type="checkbox"
-            value={"Mast & Harbour"}
-            defaultChecked={brands.includes("Mast & Harbour")}
+            value={"Lakme"}
+            defaultChecked={brands.includes("Lakme")}
             onChange={handleChange}  />
-            <label>Mast & Harbour</label>
+            <label>Lakme</label>
        </Box>
        </Box>
     </Box>
@@ -87,4 +87,4 @@ const BrandFilter = () => {
   )
 }
 
-export default BrandFilter
+export default Brand;

@@ -2,28 +2,28 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import "../css/Singlepage.css"
-import { getMenData } from '../redux/appReducer/action';
+import { getwomenData } from '../redux/appReducer/action';
 
-const Singlepage = () => {
+const SinglepageWomen = () => {
    const { id } = useParams();
-   const mendata = useSelector((store)=>store.appReducer.mensdata);
+   const womendata = useSelector((store)=>store.appReducer.womensdata);
    const [currentData, setCurrentData] = useState({})
    const dispatch = useDispatch()
- console.log('mendata: ',id, mendata);
+ console.log('womendata: ',id, womendata);
 
  useEffect(() => {
-   if(mendata.length === 0){
-     dispatch(getMenData)
+   if(womendata.length === 0){
+     dispatch(getwomenData)
    }
- }, [dispatch,mendata.length])
+ }, [dispatch,womendata.length])
 
  useEffect(() => {
     if(id){
-     const current = mendata.find((e)=> e.Idno ==+id) ;
+     const current = womendata.find((e)=> e.Idno == id) ;
      
      current && setCurrentData(current)
     }
- }, [id,mendata])
+ }, [id,womendata])
  console.log('currentData: ', currentData);
 
   return (
@@ -191,4 +191,4 @@ const Singlepage = () => {
   )
 }
 
-export default Singlepage
+export default SinglepageWomen

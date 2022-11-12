@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from 'react-router-dom'
 import categoryStyle from './filter.module.css'
 
-const CategoryFilter = () => {
+const Category = () => {
     const [searchParams,setSearchParams]=useSearchParams();
     const initialCategoryParams = searchParams.getAll("categories");
     const [category, setCategory] = useState(initialCategoryParams || []);
@@ -22,9 +22,7 @@ const CategoryFilter = () => {
   console.log('category: ', category);
     useEffect(() => {
      if(category){
-        const params = {};
-        category && (params.categories = category);
-        setSearchParams(params);
+        setSearchParams({categories:category});
      }
     }, [category,setSearchParams])
     
@@ -39,18 +37,34 @@ const CategoryFilter = () => {
        <Box >
           <input 
             type="checkbox"
-            value={"tshirt"}
-            defaultChecked={category.includes("tshirt")}
+            value={"beautycare"}
+            defaultChecked={category.includes("beautycare")}
             onChange={handleChange}  />
-            <label>Tshirts</label>
+            <label>Beautycare</label>
        </Box>
        <Box>
           <input 
             type="checkbox"
-            value={"Lounge Tshirts"}
-            defaultChecked={category.includes("Lounge Tshirts")}
+            value={"tops"}
+            defaultChecked={category.includes("tops")}
             onChange={handleChange}  />
-            <label>Lounge Tshirts</label>
+            <label>Tops</label>
+       </Box>
+       <Box>
+          <input 
+            type="checkbox"
+            value={"tshirt"}
+            defaultChecked={category.includes("tshirt")}
+            onChange={handleChange}  />
+            <label>Tshirt</label>
+       </Box>
+       <Box>
+          <input 
+            type="checkbox"
+            value={"dresses"}
+            defaultChecked={category.includes("dresses")}
+            onChange={handleChange}  />
+            <label>Dresses</label>
        </Box>
        </Box>
     </Box>
@@ -58,4 +72,4 @@ const CategoryFilter = () => {
   )
 }
 
-export default CategoryFilter
+export default Category;

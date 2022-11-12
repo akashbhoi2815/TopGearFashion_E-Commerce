@@ -1,0 +1,26 @@
+.container{
+    max-width: 100%;
+    padding: 2rem;
+}
+.leftSection{
+    min-width: 20%;
+    border-right: 1px solid gray;
+}
+.rightSection{
+    width:75%;
+    border: 1px solid gray;
+}
+.sortSection{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.combineSection{
+    display: flex;
+
+}
+.mensdata_details{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:auto;
+    gap: 20px;
+}

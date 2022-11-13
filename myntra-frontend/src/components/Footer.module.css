@@ -1,0 +1,187 @@
+
+
+
+.footer{
+
+
+    display: flex;
+    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    line-height: 10px;
+    font-size: small;
+    text-align: left;
+    
+    color: grey;
+    }
+    
+    
+    
+    
+    .popular{
+    
+    text-align: left;
+    font-size: medium;
+    font-weight: lighter;
+    color: grey;
+    
+    }
+    
+    .reserverd{
+        display: flex;
+        justify-content: space-between;
+        color: grey;
+    }
+    
+    
+    
+    .googlestore{
+        width: 230px;
+        justify-content: left;
+    
+        width: 150px;
+    }
+    
+    .appstore{
+        
+        justify-content: left;
+      
+        width: 150px;
+    }
+    
+    .imgdiv{
+        height: 60px;
+    }
+    
+    
+    .h{
+       margin-top: 7px;
+       line-height: 0px;
+    }
+    
+    .he{
+        line-height: 0px;
+    }
+    
+    
+    
+    @media only screen and (min-width: 0px) and (max-width: 320px){
+    
+        
+    
+    
+    .footer{
+    
+        width: fit-content;
+        display: flex;
+        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(2,auto);
+        line-height: 12px;
+        font-size: small;
+        text-align: left;
+        
+        color: grey;
+        }
+        
+        
+        
+        
+        .popular{
+        
+      
+        font-size: small;
+        font-weight: lighter;
+        color: grey;
+      
+        text-align: justify;
+        }
+        
+        .reserverd{
+            display: flex;
+            justify-content: space-between;
+            color: grey;
+            font-size: small;
+            font-weight:lighter ;
+          
+        }
+    
+    
+        .imgdiv{
+    
+            height: 30px;
+        }
+    
+    
+        .h{
+            margin-top: 0px;
+            line-height: 14px;
+         }
+         
+         .he{
+      
+          margin-top: -13px;
+             line-height: 14px;
+         }
+         
+    
+    
+    }
+    
+    
+    @media only  screen and (min-width: 321px) and (max-width: 768px) {
+        
+    .footer{
+    
+       
+        width: fit-content;
+        display: flex;
+       
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+        line-height: 12px;
+        font-size: small;
+        text-align: left;
+        
+        color: grey;
+        }
+        
+        
+        
+        
+        .popular{
+        
+      
+        font-size: small;
+        font-weight: lighter;
+        color: grey;
+      
+        text-align: justify;
+        }
+        
+        .reserverd{
+            display: flex;
+            justify-content: space-between;
+            color: grey;
+            font-size: small;
+            font-weight:lighter ;
+           
+        }
+    
+        .app{
+    
+    margin-left: 10px;
+    
+        }
+    
+    }
+    
+    
+    
+    @media only screen and (min-width: 320px) and (max-width: 1000px){
+    
+    }
+    
+    
+    
+    

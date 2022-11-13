@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom';
 import { getMenData } from '../redux/appReducer/action';
 import styled from "styled-components"
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Bag = () => {
       const { id } = useParams();
@@ -27,6 +29,8 @@ const Bag = () => {
     console.log('currentData: ', currentData);
   return (
     <>
+
+    <Navbar/>
     <Container>
       <div class="navbar">
          <nav class="navbar-header">
@@ -188,6 +192,7 @@ const Bag = () => {
          </div>
     </div>
     </Container>
+    <Footer/>
     </>
 
   )

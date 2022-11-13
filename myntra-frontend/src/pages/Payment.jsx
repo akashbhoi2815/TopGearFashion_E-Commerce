@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom';
 import { getMenData } from '../redux/appReducer/action';
 import styled from "styled-components"
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Payment = () => {
    const { id } = useParams();
@@ -32,6 +34,7 @@ const Payment = () => {
 
   return (
    <>
+   <Navbar/>
    <Container>
     <div>
       <div class="navbar">
@@ -145,6 +148,8 @@ const Payment = () => {
       </div>
     </div>
     </Container>
+
+    <Footer/>
     </>
   )
 }

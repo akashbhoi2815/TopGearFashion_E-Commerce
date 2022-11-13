@@ -19,6 +19,8 @@ import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { useDispatch, useSelector } from "react-redux";
 import { signup } from '../redux/authReducer/action';
 import { useNavigate, Link } from "react-router-dom";
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [state, setState] = useState({
@@ -54,6 +56,10 @@ export default function Signup() {
 
 
   return (
+
+    <>
+    <Navbar/>
+   
     <Box>
       <Flex
       m={"auto"}
@@ -167,5 +173,7 @@ export default function Signup() {
       </Stack>
     </Flex>
     </Box>
+    <Footer/>
+    </>
   );
 }

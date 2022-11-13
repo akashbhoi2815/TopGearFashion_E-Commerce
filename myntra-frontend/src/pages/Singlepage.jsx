@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getMenData } from '../redux/appReducer/action';
 import styled from "styled-components"
 
@@ -106,7 +106,9 @@ console.log('mendata: ',id, mendata);
                <button class="sizebtn" value="XL">XL</button>
                <button class="sizebtn" value="XLL">XLL</button> */}
                <div class="btn-card">
-                  <button class="addtobag"><i class="myntraweb-sprite sprites-whiteBag"></i>ADD TO BAG</button>
+                  
+                  <button class="addtobag"><i class="myntraweb-sprite sprites-whiteBag"></i><Link to={`/menpage/addtobag/${currentData?.Idno}`}>ADD TO BAG </Link></button>
+                 
                   <button class="addtowishlist"><i class="myntraweb-sprite sprites-notWishlisted"></i>WISHLIST</button>
                </div>
             </div>

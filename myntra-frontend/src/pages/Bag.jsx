@@ -1,7 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useParams } from 'react-router-dom';
+import { getMenData } from '../redux/appReducer/action';
 import styled from "styled-components"
 
 const Bag = () => {
+      const { id } = useParams();
+      const mendata = useSelector((store)=>store.appReducer.mensdata);
+      const [currentData, setCurrentData] = useState({})
+      const dispatch = useDispatch()
+    console.log('mendata: ',id, mendata);
+
+    useEffect(() => {
+      if(mendata.length === 0){
+        dispatch(getMenData)
+      }
+    }, [dispatch,mendata.length])
+
+    useEffect(() => {
+      if(id){
+        const current = mendata.find((e)=> e.Idno ==+id) ;
+        
+        current && setCurrentData(current)
+      }
+    }, [id,mendata])
+    console.log('currentData: ', currentData);
   return (
     <>
     <Container>
@@ -56,27 +79,28 @@ const Bag = () => {
                      </div>  */}
 
                      <img
-                        src="https://assets.myntassets.com/f_webp,dpr_2.8,q_60,w_210,c_limit,fl_progressive/assets/images/12816878/2020/12/8/992feaf9-6ccf-4880-8076-100237f3c1c91607426778122-HERENOW-Men-Tshirts-2751607426776423-1.jpg"
+                        src={currentData?.images?.image1}
+                        // src="https://assets.myntassets.com/f_webp,dpr_2.8,q_60,w_210,c_limit,fl_progressive/assets/images/12816878/2020/12/8/992feaf9-6ccf-4880-8076-100237f3c1c91607426778122-HERENOW-Men-Tshirts-2751607426776423-1.jpg"
                         alt=""
                      />
                   </div>
                   <div class="itemContainer-itemRight">
-                     <h5 class="itemContainer-brand">HERE &amp; NOW</h5>
-                     <p class="itemContainer-title">HERENOW Men White Printed Pure Cotton T-shir Cotton T-shir Cotton T-shirt</p>
+                     <h5 class="itemContainer-brand">{currentData?.brand}</h5>
+                     <p class="itemContainer-title">{currentData?.title}</p>
                      <p class="itemContainer-soldby">Sold By: Omnitech Retail</p>
                      <div class="sizeQtyContainer">
                         <div class="item-size">Size: M</div>
                         <div class="item-qty">Qty: 1</div>
                      </div>
                      <div class="itemPriceContainer">
-                        <h5 class="item-price">₹ 315</h5>
-                        <h5 class="og-price"> ₹ 699</h5>
-                        <h5 class="orange-1"> 55% OFF</h5>
+                        <h5 class="item-price">₹ {currentData?.price}</h5>
+                        <h5 class="og-price"> ₹ {currentData?.off_price}</h5>
+                        <h5 class="orange-1"> {currentData?.discount} OFF</h5>
                      </div>
                      <div class="deliveryContainer">
                         <span class="myntraweb-sprite sprites-greenTickIcon"></span>
                         <span>Delivery By</span>
-                        <strong>21 Jun 2022</strong>
+                        <strong>15 Nov 2022</strong>
                      </div>
                   </div>
                   <div class="itemContainer-closeIcon">
@@ -131,11 +155,11 @@ const Bag = () => {
                <div class="priceBreakUp-orderSummary">
                   <div class="priceDetail-row">
                      <span>Total MRP</span>
-                     <span class="priceDetail-value actual-price">₹699</span>
+                     <span class="priceDetail-value actual-price">₹{currentData?.price}</span>
                   </div>
                   <div class="priceDetail-row">
                      <span>Discount on MRP</span>
-                     <span class="priceDetail-value discount-price teal-1">-₹350</span>
+                     <span class="priceDetail-value discount-price teal-1">₹{(+currentData?.price)-(+currentData?.off_price)}</span>
                   </div>
                   <div class="priceDetail-row">
                      <span>Coupon Discount</span>
@@ -154,11 +178,12 @@ const Bag = () => {
             <div class="total-container">
                <div class="priceDetail-row">
                   <span>Total Amount</span>
-                  <span class="priceDetail-total">₹458</span>
+                  <span class="priceDetail-total">₹{+currentData?.price+99+10}</span>
                </div>
             </div>
             <div class="orderbtn-container">
-               <button class="order-btn">PLACE ORDER</button>
+              
+               <button class="order-btn"><Link to={`/menpage/address/${currentData?.Idno}`}>PLACE ORDER</Link></button>
             </div>
          </div>
     </div>

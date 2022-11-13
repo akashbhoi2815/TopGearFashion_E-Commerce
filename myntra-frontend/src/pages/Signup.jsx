@@ -53,7 +53,7 @@ export default function Signup() {
 
 
   return (
-    <Box ml={"28rem"}>
+    <Box>
       <Flex
       m={"auto"}
       minH={'100vh'}

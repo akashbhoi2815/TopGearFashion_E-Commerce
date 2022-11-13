@@ -6,6 +6,7 @@ const connection = require("./config/db");
 const { UsersModel } = require("./Model/Users.model");
 const { menRouter } = require("./routes/Men.route");
 const { womenRouter } = require("./routes/Women.route");
+const { Homeslider1Router } = require("./routes/HomeSlider1.route");
 const app=express();
 app.use(express.json());
 app.use(cors());
@@ -66,6 +67,7 @@ app.get("/users",async(req,res)=>{
 
 app.use("/tgf",menRouter);
 app.use("/tgf",womenRouter)
+app.use("/tgf",Homeslider1Router)
 app.listen(8000,async()=>{
     try{
         await connection,

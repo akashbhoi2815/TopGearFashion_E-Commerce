@@ -31,7 +31,7 @@ const Brand = () => {
     
     <Box >
        
-       <Box display={"flex"} flexDir="column" alignItems={"baseline"} border={"1px solid gray"}>
+       <Box className={brandStyle.main}>
        <Heading>BRAND</Heading>
        <Box>
           <input 

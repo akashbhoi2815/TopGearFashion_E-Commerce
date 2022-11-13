@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import { getwomenData } from '../redux/appReducer/action';
-import styled from "styled-components";
+import styled from "styled-components"
+
 const SinglepageWomen = () => {
    const { id } = useParams();
    const womendata = useSelector((store)=>store.appReducer.womensdata);
@@ -28,7 +29,7 @@ const SinglepageWomen = () => {
   return (
     <>
     {/* Start  */}
-      <Container>
+    <Container>
       <div class="container">
          <div class="img-card">
              <div>
@@ -95,7 +96,7 @@ const SinglepageWomen = () => {
                <h5>SELECT SIZE</h5>
                {
                   currentData?.sizes?.map((e)=>(
-                     <button class="sizebtn" value={e}>{e}</button>
+                     <button class="sizebtn" value={e} key={e.toString()}>{e}</button>
                   ))
                }
                {/* <button class="sizebtn" value="S">S</button>
@@ -216,7 +217,7 @@ hr{
    display: flex;
    justify-content: space-between;
 }
-/* product Image CSS */
+//  product Image CSS
 .img-card {
    width: 60%;
    display: grid;
@@ -240,7 +241,7 @@ hr{
    transform: scale(1.1);
 }
 
-/* Details Card CSS */
+//  Details Card CSS 
 .details-card {
    width: 39%;
 }
@@ -269,7 +270,7 @@ hr{
    display: flex;
    align-items: center;
 }
-/* Rating Desing */
+// rating design
 .rating-card {
    display: flex;
    align-items: center;

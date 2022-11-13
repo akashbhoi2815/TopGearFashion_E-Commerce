@@ -30,7 +30,7 @@ export default function Signup() {
   });
 
   const currentUser =  useSelector((store)=>store.authReducer.currentUser)
-  // console.log('currentUser: ', currentUser);
+  console.log('currentUser: ', currentUser);
   
   const dispatch = useDispatch();
   const navigate = useNavigate();

@@ -45,14 +45,12 @@ export default function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(signup(state))
+    dispatch(signup(state)).then((data)=>{
+      console.log(data)
+    })
     setState({email:"",password:"",name:"",mobile:"",gender:""})
    
   };
-
-
-
-
 
 
   return (

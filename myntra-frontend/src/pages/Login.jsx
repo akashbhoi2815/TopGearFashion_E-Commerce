@@ -45,7 +45,7 @@ export default function Login() {
     e.preventDefault();
     dispatch(login(state)).then((data)=>{
       // console.log("data",data.payload.data.message)
-      if(data?.payload?.data?.message === "Login Successfull"){
+      if(data?.payload?.data?.msg === "Login Successfull"){
         navigate(comingFrom, {replace:true})
      }
     })

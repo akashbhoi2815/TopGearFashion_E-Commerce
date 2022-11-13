@@ -73,8 +73,8 @@ export const signup = (payload) => (dispatch) => {
     data: payload,
   })
     .then((r) => {
-      console.log(r.data);
-      if (r.data == "User already Exist Try login ") {
+      console.log(r);
+      if (r.data == "User already Exist Try to login") {
         alert("User already Exist Please Try To Login");
       } else {
         alert("Signup Successfully");

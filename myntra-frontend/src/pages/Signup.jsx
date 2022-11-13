@@ -30,7 +30,7 @@ export default function Signup() {
   });
 
   const currentUser =  useSelector((store)=>store.authReducer.currentUser)
-  console.log('currentUser: ', currentUser);
+  // console.log('currentUser: ', currentUser);
   
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -43,14 +43,12 @@ export default function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(signup(state))
+    dispatch(signup(state)).then((data)=>{
+      console.log(data)
+    })
     setState({email:"",password:"",name:"",mobile:"",gender:""})
    
   };
-
-
-
-
 
 
   return (

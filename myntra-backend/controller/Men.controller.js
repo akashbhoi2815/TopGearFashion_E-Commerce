@@ -5,6 +5,12 @@ const getMenData=async(req,res)=>{
     res.send(menData)
 }
 
+const filterdata=async(req,res)=>{
+    const {brand,color,categories,price}=req.query
+    const filterData=await MensModel.find({$or:[{brand},{color},{categories},{price}]});
+    res.send(filterData)
+}
+
 const getBrand=async(req,res)=>{
     const brandData=await MensModel.find({brand:req.params.brand});
     res.send(brandData)
@@ -24,6 +30,7 @@ const postMensData=async(req,res)=>{
 
 const MensDataController={
     getMenData,
+    filterdata,
     getBrand,
     postMensData
 }

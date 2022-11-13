@@ -193,7 +193,6 @@ const SinglepageWomen = () => {
 }
 
 export default SinglepageWomen
-
 const Container = styled.div`
 @font-face {
    font-family: "Whitney";

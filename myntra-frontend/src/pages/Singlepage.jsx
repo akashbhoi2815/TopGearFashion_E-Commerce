@@ -10,7 +10,7 @@ const Singlepage = () => {
    const mendata = useSelector((store)=>store.appReducer.mensdata);
    const [currentData, setCurrentData] = useState({})
    const dispatch = useDispatch()
- console.log('mendata: ',id, mendata);
+console.log('mendata: ',id, mendata);
 
  useEffect(() => {
    if(mendata.length === 0){
@@ -25,10 +25,10 @@ const Singlepage = () => {
      current && setCurrentData(current)
     }
  }, [id,mendata])
- console.log('currentData: ', currentData);
+ console.log('currentData: ', currentData.sizes);
 
   return (
-     <>
+    <>
     {/* Start  */}
       <Container>
       <div class="container">
@@ -191,7 +191,7 @@ const Singlepage = () => {
          </div>
       </div>
       </Container>
-    </> 
+    </>
   )
 }
 
@@ -221,7 +221,7 @@ hr{
    display: flex;
    justify-content: space-between;
 }
-//  product Image CSS
+/* product Image CSS */
 .img-card {
    width: 60%;
    display: grid;
@@ -245,7 +245,7 @@ hr{
    transform: scale(1.1);
 }
 
-//  Details Card CSS 
+/* Details Card CSS */
 .details-card {
    width: 39%;
 }
@@ -274,7 +274,7 @@ hr{
    display: flex;
    align-items: center;
 }
-// rating design
+/* Rating Desing */
 .rating-card {
    display: flex;
    align-items: center;

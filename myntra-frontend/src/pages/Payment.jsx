@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { getMenData } from '../redux/appReducer/action';
 import styled from "styled-components"
 
@@ -9,6 +9,7 @@ const Payment = () => {
    const mendata = useSelector((store)=>store.appReducer.mensdata);
    const [currentData, setCurrentData] = useState({})
    const dispatch = useDispatch()
+   const navigate = useNavigate()
    console.log('mendata: ',id, mendata);
 
  useEffect(() => {
@@ -23,7 +24,11 @@ const Payment = () => {
      current && setCurrentData(current)
    }
  }, [id,mendata])
- console.log('currentData: ', currentData);
+  const handleClick = (e) =>{
+   // e.preventDefault();
+   alert("Your Payment is Successful")
+   navigate("/lastpage")
+  }
 
   return (
    <>
@@ -77,25 +82,11 @@ const Payment = () => {
                      <div class="PaymentCardContainer">
                         <div class="payment-Heading">CREADIT/DEBIT CARD</div>
                         <form class="cardDetailsContainer">
-                           <input
-                              class="cardNumber"
-                              type="tel"
-                              maxlength="16"
-                              minlength="16"
-                              pattern="[0-9]{16}"
-                              value=""
-                              placeholder="Card Number"
-                           />
-                           <input class="cardName" type="text" maxlength="20" value="" placeholder="Name on Card" />
-                           <div class="cardExpiryContainer">
-                              <input class="cardExp" type="tel" minlength="5" pattern="[0-9]{2}/[0-9]{2}" value="" placeholder="Valid Thru(MM/YY)" />
-                              <input class="cardCVV" type="tel" minlength="4" pattern="[0-9]{4}" value="" placeholder="CVV" />
-                           </div>
-                           <div class="cardOTPContainer">
-                              <input class="cardotpBtn" type="submit" value="Send OTP" />
-                              <input class="cardOTP" type="tel" maxlength="6" pattern="[0-9]{6}" value="" placeholder="Enter OTP" />
-                           </div>
-                           <p class="OTPVerificationMsg">OTP Varified Successfully</p>
+                           <input type="text" placeholder='Number of the card'/>
+                           <input type="text" placeholder="Name on Card" />
+                           <input type="date" placeholder="Valid Through(MM/YY)" />
+                           <input type="number" placeholder='CVV' />
+                           <input  type="button" value="Make Payment" onClick={() =>handleClick()}/>
                         </form>
                      </div>
                   </div>
@@ -135,10 +126,6 @@ const Payment = () => {
                <span class="priceDetail-total">₹{+currentData?.price+99+10}</span>
             </div>
          </div>
-            <p class="PaymentVerificationMsg">Varifying Payment...</p>
-            <div class="orderbtn-container">
-               <button class="order-btn">PLACE ORDER</button>
-            </div>
          </div>
       </div>
       <div class="bagfootercontainer">
@@ -301,47 +288,17 @@ const Container = styled.div`
    padding: 8px 20px;
 }
 .cardDetailsContainer {
-   display: grid;
-   grid-template-columns: 1fr;
-   gap: 10px;
-}
-.cardExpiryContainer {
    display: flex;
-   justify-content: space-between;
+   flex-direction: column;
 }
+
 input {
    height: 35px;
-   outline: none;
    border: 1px solid #d4d5d9;
    padding: 0px 10px;
    border-radius: 2px;
 }
-.cardOTPContainer {
-   display: flex;
-   justify-content: center;
-   gap: 15px;
-}
-.cardotpBtn {
-   /* display: none; */
-   font-size: 12px;
-   padding: 4px 16px;
-   font-weight: 600;
-   border-radius: 2px;
-   background-color: rgb(255, 255, 255);
-   color: rgb(255, 63, 108);
-   border: 1px solid #ff527b;
-   cursor: pointer;
-}
-.cardOTP {
-   display: none;
-}
-.OTPVerificationMsg {
-   display: none;
-   color: teal;
-   font-weight: 600;
-   font-size: 14px;
-   text-align: center;
-}
+
 //  Right Block 
 .block > .right-block {
    width: 45%;
@@ -350,20 +307,6 @@ input {
    display: flex;
    flex-direction: column;
    gap: 8px;
-}
-
-.order-btn {
-   display: none;
-   width: 100%;
-   letter-spacing: 1px;
-   font-size: 14px;
-   font-weight: 600;
-   border-radius: 2px;
-   border: none;
-   padding: 10px 16px;
-   background-color: rgb(255, 63, 108);
-   color: rgb(255, 255, 255);
-   cursor: pointer;
 }
 
 .priceBlock-container {
@@ -400,17 +343,12 @@ input {
 }
 
 //  footer 
-.bagfootercontainer {
-   margin-top: 50px;
+.bagfooter-images {
    display: flex;
    justify-content: space-around;
    align-items: center;
-   height: 30px;
-   /* position: absolute; */
-   bottom: 15px;
-}
-.bagfooter-images {
-   width: 80%;
+   width: 50%;
+   margin-top: 30px;
 }
 .bagfooter-images > img {
    width: 6%;
@@ -419,19 +357,7 @@ input {
    width: 15%;
    font-size: 14px;
    font-weight: 500;
-}
-
-//  Quick CSS 
-
-.btn-222 {
-   margin-top: 8px;
-   font-size: 12px;
-   font-weight: 600;
-   border-radius: 2px;
-   border: none;
-   background-color: transparent;
-   color: rgb(255, 63, 108);
-   cursor: pointer;
+   margin-top: 20px;
 }
 
 `

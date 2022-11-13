@@ -53,9 +53,9 @@ const Adress = () => {
                             <input type="number" name="" id="mobile" placeholder="Mobile No*" />
                             <h5 class="">ADDRESS</h5>
                             <input type="number" name="" id="pin" placeholder="Pin Code*" />
-                            <div id="pin-alert">
+                            {/* <div id="pin-alert">
                                 pin code madatory alert 
-                            </div>
+                            </div> */}
                             <input type="text" name="" id="address" placeholder="Address(House No, Building,Street, Area)*" />
                             <input type="text" name="" id="locality" placeholder="Locality/Town" />
                             <div id="city-state">

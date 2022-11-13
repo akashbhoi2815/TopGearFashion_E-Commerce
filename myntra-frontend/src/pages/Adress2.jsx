@@ -56,10 +56,10 @@ const Adress2 = () => {
             <div class="addressStrip">
                 <input type="radio" name="" id="radio" checked="checked"/>
                 <div id="address-details">
-                    <h4  id="name"></h4>
-                    <p class="add-font" id=""><span id="add" class="test"></span>,<span id="loc"></span></p>
+                    <h4  id="name">Rohit Sharma</h4>
+                    <p class="add-font" id="">898989<span id="add" class="test"></span>,<span id="loc"></span></p>
                     <p class="add-font"><span id="city"></span>,<span id="state"></span>- <span id="pin"></span> </p>
-                    <p class="add-font" id="pmob">Mobile: <span id="mob"></span></p>
+                    <p class="add-font" id="pmob">Mobile: 9875456723<span id="mob"></span></p>
                     <div id="edit">
                         <div>REMOVE</div>
                         <div>EDIT</div>
@@ -105,7 +105,7 @@ const Adress2 = () => {
          </div>
             <div class="orderbtn-container">
             
-                <button id="continue" class="order-btn"><Link to={`/menpage/payment/${currentData?.Idno}`}>CONTINUE</Link></button>
+            <Link to={`/menpage/payment/${currentData?.Idno}`}><button id="continue" class="order-btn">CONTINUE</button></Link>
              </div>
         </div>
         </div>

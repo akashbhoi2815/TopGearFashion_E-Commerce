@@ -11,6 +11,7 @@ import Adress2 from '../pages/Adress2'
 import Payment from '../pages/Payment'
 import WomenPage from '../pages/women/WomenPage'
 import SinglepageWomen from '../pages/SinglepageWomen'
+import Lastpage from '../pages/Lastpage'
 
 const AllRoutes = () => {
   return (
@@ -28,6 +29,7 @@ const AllRoutes = () => {
         <Route path='/womenpage/:id' element={<SinglepageWomen/>}></Route>
         <Route path="/bag" element={<Bag/>}></Route>
         <Route path='/menpage/payment/:id' element={<Payment/>}></Route>
+        <Route path='/lastpage' element={<Lastpage/>}></Route>
       </Routes>
     </div>
   )

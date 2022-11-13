@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { getMenData } from '../redux/appReducer/action';
 import styled from "styled-components"
 
@@ -9,6 +9,7 @@ const Payment = () => {
    const mendata = useSelector((store)=>store.appReducer.mensdata);
    const [currentData, setCurrentData] = useState({})
    const dispatch = useDispatch()
+   const navigate = useNavigate()
    console.log('mendata: ',id, mendata);
 
  useEffect(() => {
@@ -23,7 +24,11 @@ const Payment = () => {
      current && setCurrentData(current)
    }
  }, [id,mendata])
- console.log('currentData: ', currentData);
+  const handleClick = (e) =>{
+   // e.preventDefault();
+   alert("Your Payment is Successful")
+   navigate("/lastpage")
+  }
 
   return (
    <>
@@ -81,7 +86,7 @@ const Payment = () => {
                            <input type="text" placeholder="Name on Card" />
                            <input type="date" placeholder="Valid Through(MM/YY)" />
                            <input type="number" placeholder='CVV' />
-                           <input  type="button" value="Send OTP" />
+                           <input  type="button" value="Make Payment" onClick={() =>handleClick()}/>
                         </form>
                      </div>
                   </div>

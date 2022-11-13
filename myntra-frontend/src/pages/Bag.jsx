@@ -183,7 +183,7 @@ const Bag = () => {
             </div>
             <div class="orderbtn-container">
               
-               <button class="order-btn"><Link to={`/menpage/address/${currentData?.Idno}`}>PLACE ORDER</Link></button>
+            <Link to={`/menpage/address/${currentData?.Idno}`}><button class="order-btn">PLACE ORDER</button></Link>
             </div>
          </div>
     </div>

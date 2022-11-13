@@ -1,6 +1,8 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components"
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 
 const Last = () => {
     const navigate = useNavigate()
@@ -9,6 +11,7 @@ const Last = () => {
         navigate("/")
     }
     return (
+     
         <Container>
         <div className="lastdiv">
             <div>
@@ -20,6 +23,7 @@ const Last = () => {
             <button id="lastbutton" onClick={handleClick}>Continue Shoping</button>
         </div>
         </Container>
+
     )
 }
 

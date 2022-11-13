@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom';
 import { getMenData } from '../redux/appReducer/action';
 import styled from "styled-components"
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Singlepage = () => {
    const { id } = useParams();
@@ -29,6 +31,7 @@ console.log('mendata: ',id, mendata);
 
   return (
     <>
+    <Navbar/>
     {/* Start  */}
       <Container>
       <div class="container">
@@ -191,6 +194,7 @@ console.log('mendata: ',id, mendata);
          </div>
       </div>
       </Container>
+      <Footer/>
     </>
   )
 }

@@ -12,13 +12,14 @@ import Payment from '../pages/Payment'
 import SinglepageWomen from '../pages/SinglepageWomen'
 import WomenPage from '../pages/women/WomenPage'
 import Lastpage from '../pages/Lastpage'
+import Landing from './landingpage'
 
 
 const AllRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path='/' element={<Home/>}></Route>
+        <Route path='/' element={<Landing/>}></Route>
         <Route path='/signup' element={<Signup/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/menpage' element={<MenPage/>}></Route>

@@ -11,6 +11,8 @@ import Sort from "./Sort";
 import Brand from "./Brand";
 import Color from "./Color";
 import Price from "./Price";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const WomenPage = () => {
   const dispatch = useDispatch();
@@ -45,6 +47,8 @@ const WomenPage = () => {
   }, [location.search]);
   console.log(location.search);
   return (
+<>
+    <Navbar/>
     <Box className={menstyle.container}>
       <Box className={menstyle.sortSection}>
         <Heading
@@ -110,6 +114,8 @@ const WomenPage = () => {
         </Box>
       </Box>
     </Box>
+    <Footer/>
+    </>
   );
 };
 

@@ -19,6 +19,8 @@ import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { useDispatch, useSelector } from "react-redux";
 import { login } from '../redux/authReducer/action';
 import { useNavigate, Link, useLocation } from "react-router-dom";
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -54,6 +56,9 @@ export default function Login() {
   };
 
   return (
+    <>
+    <Navbar/>
+    
     <Box  border={"1px solid teal"}>
     <Flex
       border={"1px solid red"}
@@ -133,5 +138,8 @@ export default function Login() {
       </Stack>
     </Flex>
     </Box>
+    <Footer/>
+    
+    </>
   );
 }

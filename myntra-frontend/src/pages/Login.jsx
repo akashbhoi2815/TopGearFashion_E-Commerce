@@ -18,7 +18,7 @@ import { useState } from 'react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { useDispatch, useSelector } from "react-redux";
 import { login } from '../redux/authReducer/action';
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -31,6 +31,9 @@ export default function Login() {
   
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation()
+  const comingFrom = location.state?.from?.pathname || '/'
+  // console.log('comingFrom: ', comingFrom);
   const { email, password  } = state;
 
   const handleOnchange = (e) => {
@@ -41,9 +44,12 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(login(state)).then((data)=>{
-      console.log("data",data)
+      // console.log("data",data.payload.data.message)
+      if(data?.payload?.data?.message === "Login Successfull"){
+        navigate(comingFrom, {replace:true})
+     }
     })
-    // setState({email:"",password:"",name:"",mobile:"",gender=""})
+    // setState({email:"",password:""})
    
   };
 
@@ -117,6 +123,11 @@ export default function Login() {
                 />
             </Stack>
             </form>
+            <Stack pt={6}>
+              <Text align={'center'}>
+                If You Don't Have Account? <Link color={'blue.400'} to="/signup">Signup</Link>
+              </Text>
+            </Stack>
           </Stack>
         </Box>
       </Stack>

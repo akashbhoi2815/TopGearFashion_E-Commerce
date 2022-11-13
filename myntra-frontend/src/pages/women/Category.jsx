@@ -33,7 +33,16 @@ const Category = () => {
     <Box >
       
        <Box className={categoryStyle.main}>
-       <Heading>CATEGORIES</Heading>
+       <Heading
+       style={{
+        fontweight: 900,
+        textTransform: "uppercase",
+        fontSize: "25px",
+        clear: "both",
+        color: "#282c3f",
+        display: "block",
+       }}
+       >CATEGORIES</Heading>
        <Box >
           <input 
             type="checkbox"

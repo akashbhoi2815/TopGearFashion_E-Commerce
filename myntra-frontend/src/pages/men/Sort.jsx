@@ -23,9 +23,9 @@ const Sort = () => {
   return (
     <Box >
        <Select name="sortBy" onChange={handleSortBy}>
-          <option value="">Default</option>
-          <option value="asc"  defaultChecked={sortBy === "asc"} >Ascending</option>
-          <option value="desc" defaultChecked={sortBy === "desc"} >Descending</option>
+          <option value="">SortBy:Default</option>
+          <option value="asc"  defaultChecked={sortBy === "asc"} >Price: Low to High</option>
+          <option value="desc" defaultChecked={sortBy === "desc"} >Price: High to Low</option>
       </Select> 
     </Box>
   );

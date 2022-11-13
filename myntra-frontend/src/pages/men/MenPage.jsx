@@ -2,7 +2,7 @@ import { Box, Heading, Grid, GridItem, Image } from "@chakra-ui/react";
 
 import menstyle from "./menpage.module.css";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getMenData } from "../../redux/appReducer/action";
 import { useSearchParams, useLocation, Link } from "react-router-dom";
@@ -19,6 +19,15 @@ const WomenPage = () => {
   const location = useLocation();
 
   const sortBy = searchParams.get("sortBy");
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  function over(e) {
+    setIsVisible(true);
+  }
+  function out(e) {
+    setIsVisible(false);
+  }
 
   useEffect(() => {
     if (location || mendata.length === 0) {
@@ -37,7 +46,22 @@ const WomenPage = () => {
   console.log(location.search);
   return (
     <Box className={menstyle.container}>
-      <Box className={menstyle.sortSection}><Sort /></Box>
+      <Box className={menstyle.sortSection}>
+        <Heading
+          style={{
+            fontweight: 900,
+            textTransform: "uppercase",
+            fontSize: "25px",
+            clear: "both",
+            color: "teal",
+            display: "block",
+          }}
+        >
+          Filter
+        </Heading>
+        <Sort />
+      </Box>
+      <hr />
       <Box className={menstyle.combineSection}>
         <Box className={menstyle.leftSection}>
           <Category />
@@ -46,21 +70,43 @@ const WomenPage = () => {
           <Price />
         </Box>
         <Box className={menstyle.rightSection}>
-          <Grid templateRows="auto" templateColumns="repeat(5, 1fr)" gap={4}>
+          {/* <Grid templateRows="auto" templateColumns="repeat(5, 1fr)" gap={4}> */}
+          <Box className={menstyle.mensdata_details}>
             {mendata?.length > 0 &&
               mendata?.map((e) => (
-                <GridItem border={"1px hidden"} key={e._id}>
+                <GridItem border={"1px hidden"} key={e._id} p="1rem">
                   <Box>
                     <Image minW="100%" src={e.images.image1} alt="" />
                   </Box>
                   <Link to={`/menpage/${e.Idno}`}>
-                    <div>{e.brand}</div>
-                    <div>{e.title}</div>
-                    <div>{e.price}</div>
+                    <div className={menstyle.brand}>{e.brand}</div>
+                    {/* <div className={menstyle.title}>{e.title}</div> */}
+
+                    <div className={menstyle.contact}>
+                      <span className={menstyle.title}>{e.title}</span>
+                      <span className={menstyle.sizes}>
+                        Sizes:
+                        {e.sizes.map((size) => (
+                          <div key={size.toString()}>
+                            {size}
+                          </div>
+                        ))}
+                      </span>
+                    </div>
+                    <div>
+                      <span>Rs.{e.price} </span>
+                      <span className={menstyle.off_price}>
+                        Rs.{e.off_price}
+                      </span>
+                      <span className={menstyle.discount}>
+                        ({e.discount}% OFF)
+                      </span>
+                    </div>
                   </Link>
                 </GridItem>
               ))}
-          </Grid>
+          </Box>
+          {/* </Grid> */}
         </Box>
       </Box>
     </Box>

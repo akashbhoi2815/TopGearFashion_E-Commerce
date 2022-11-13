@@ -30,6 +30,7 @@ export default function Signup() {
   });
 
   const currentUser =  useSelector((store)=>store.authReducer.currentUser)
+  console.log('currentUser: ', currentUser);
   
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ export default function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(signup(state))
-    // setState({email:"",password:"",name:"",mobile:"",gender=""})
+    setState({email:"",password:"",name:"",mobile:"",gender:""})
    
   };
 
@@ -158,7 +159,7 @@ export default function Signup() {
             
             <Stack pt={6}>
               <Text align={'center'}>
-                Already a user? <Link color={'blue.400'}>Login</Link>
+                Already a user? <Link color={'blue.400'} to="/login">Login</Link>
               </Text>
             </Stack>
           </Stack>

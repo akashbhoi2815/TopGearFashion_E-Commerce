@@ -1,5 +1,5 @@
 import * as types from "./actionTypes";
-let auth = "";
+let auth = false;
 import axios, { Axios } from "axios";
 const signupRequest = () => {
   return {
@@ -24,10 +24,10 @@ const loginRequest = () => {
     type: types.LOGIN_REQUEST,
   };
 };
-const loginSuccess = (user) => {
+const loginSuccess = (payload) => {
   return {
     type: types.LOGIN_SUCCESS,
-    payload: user,
+    payload,
   };
 };
 const loginFailure = (error) => {
@@ -98,12 +98,13 @@ export const login = (payload) => (dispatch) => {
     data: payload,
   })
     .then((r) => {
-      console.log(r.data.msg);
       if (r.data.msg == "Login Failed") {
         alert("Login Failed");
       } else {
         alert("Login Successfully");
+        console.log("token", r.data.token);
       }
+      localStorage.setItem("token", r.data.token);
       return dispatch(loginSuccess(r));
     })
     .catch((e) => {

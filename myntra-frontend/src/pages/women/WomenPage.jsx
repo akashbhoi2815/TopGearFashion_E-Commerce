@@ -4,13 +4,13 @@ import womenstyle from "./women.module.css";
 
 
 
-import React, { useEffect } from "react";
+import React, { useEffect ,useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {  getwomenData } from "../../redux/appReducer/action";
 import { useSearchParams, useLocation, Link } from "react-router-dom";
 import Category from "./Category";
 import Sort from "./Sort";
-import Brand from "../men/Brand";
+import Brand from "./Brand";
 import Color from "./Color";
 import Price from "./Price";
 
@@ -40,9 +40,16 @@ const WomenPage = () => {
   console.log(location.search)
   return (
     <Box className={womenstyle.container}>
-      <Box className={womenstyle.sortSection}>
-        <Sort />
-      </Box>
+      <Box className={womenstyle.sortSection}><Heading
+       style={{
+        fontweight: 900,
+        textTransform: "uppercase",
+        fontSize: "25px",
+        clear: "both",
+        color: "teal",
+        display: "block",
+       }}
+      >Filter</Heading><Sort /></Box>
       <Box className={womenstyle.combineSection}>
         <Box className={womenstyle.leftSection}>
           <Category/>
@@ -53,7 +60,7 @@ const WomenPage = () => {
         </Box>
         <Box className={womenstyle.rightSection}>
          
-          <Grid 
+          {/* <Grid 
            templateRows='auto'
            templateColumns='repeat(5, 1fr)'
            gap={4}>
@@ -70,7 +77,30 @@ const WomenPage = () => {
                 </Link>
               </GridItem>
             ))}
-          </Grid>
+          </Grid> */}
+          <Box className={womenstyle.rightSection}>
+         
+            <Box className={womenstyle.mensdata_details}>
+            {womendata?.length > 0 &&
+              womendata?.map((e) => (
+                <GridItem border={"1px hidden"} key={e._id} p="1rem">
+                  <Box>
+                    <Image minW="100%" src={e.images.image1} alt="" />
+                  </Box>
+                  <Link to={`/menpage/${e.Idno}`} >
+                    <div className={womenstyle.brand}>{e.brand}</div>
+                    <div className={womenstyle.title}>{e.title}</div>
+                    <div >
+                    <span >Rs. {e.price} </span>
+                    <span className={womenstyle.off_price}> Rs. {e.off_price}</span>
+                    <span className={womenstyle.discount}> ({e.discount}% OFF)</span>
+                  </div>
+                  </Link>
+                </GridItem>
+              ))}
+              </Box>
+         
+        </Box>
         </Box>
       </Box>
     </Box>

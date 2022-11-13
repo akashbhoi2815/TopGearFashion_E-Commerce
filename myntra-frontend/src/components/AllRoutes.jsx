@@ -9,8 +9,8 @@ import Home from './Home'
 import Adress from '../pages/Adress'
 import Adress2 from '../pages/Adress2'
 import Payment from '../pages/Payment'
-import WomenPage from '../pages/women/WomenPage'
 import SinglepageWomen from '../pages/SinglepageWomen'
+import WomenPage from '../pages/women/WomenPage'
 
 const AllRoutes = () => {
   return (

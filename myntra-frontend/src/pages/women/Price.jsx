@@ -9,7 +9,16 @@ const Price = () => {
     <Box>
        
        <Box className={priceStyle.main}>
-       <Heading>PRICE</Heading>
+       <Heading
+       style={{
+        fontweight: 900,
+        textTransform: "uppercase",
+        fontSize: "25px",
+        clear: "both",
+        color: "#282c3f",
+        display: "block",
+       }}
+       >PRICE</Heading>
        <Box>
           <input 
             type="checkbox"/>

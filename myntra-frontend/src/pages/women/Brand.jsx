@@ -43,10 +43,10 @@ const Brand = () => {
        <Box>
           <input 
             type="checkbox"
-            value={"Roadster"}
-            defaultChecked={brands.includes("Roadster")}
+            value={"Clovia"}
+            defaultChecked={brands.includes("Clovia")}
             onChange={handleChange}  />
-            <label>Roadster</label>
+            <label>Clovia</label>
        </Box>
        <Box>
           <input 
@@ -59,10 +59,10 @@ const Brand = () => {
        <Box>
           <input 
             type="checkbox"
-            value={"indus route by Pantaloons"}
-            defaultChecked={brands.includes("indus route by Pantaloons")}
+            value={"Dressberry"}
+            defaultChecked={brands.includes("Dressberry")}
             onChange={handleChange}  />
-            <label>Indus route by Pantaloons</label>
+            <label>Dressberry</label>
        </Box>
        <Box>
           <input 
@@ -83,18 +83,10 @@ const Brand = () => {
        <Box>
           <input 
             type="checkbox"
-            value={"Street Armor by Pantaloons"}
-            defaultChecked={brands.includes("Street Armor by Pantaloons")}
+            value={"Lakme"}
+            defaultChecked={brands.includes("Lakme")}
             onChange={handleChange}  />
-            <label>Street Armor by Pantaloons</label>
-       </Box>
-       <Box>
-          <input 
-            type="checkbox"
-            value={"HRX"}
-            defaultChecked={brands.includes("HRX")}
-            onChange={handleChange}  />
-            <label>HRX</label>
+            <label>Lakme</label>
        </Box>
        </Box>
     </Box>

@@ -33,39 +33,43 @@ const Category = () => {
     <Box >
       
        <Box className={categoryStyle.main}>
-       <Heading>CATEGORIES</Heading>
-       <Box >
-          <input 
+       <Heading
+       style={{
+        fontweight: 900,
+        textTransform: "uppercase",
+        fontSize: "25px",
+        clear: "both",
+        color: "#282c3f",
+        display: "block",
+       }}
+       >CATEGORIES</Heading>
+         <Box>
+          <input
             type="checkbox"
-            value={"beautycare"}
-            defaultChecked={category.includes("beautycare")}
-            onChange={handleChange}  />
-            <label>Beautycare</label>
-       </Box>
-       <Box>
-          <input 
+            value={"Men's Clothing"}
+            defaultChecked={category.includes("Men's Clothing")}
+            onChange={handleChange}
+          />
+          <label>Men's Clothing</label>
+        </Box>
+        <Box>
+          <input
             type="checkbox"
-            value={"tops"}
-            defaultChecked={category.includes("tops")}
-            onChange={handleChange}  />
-            <label>Tops</label>
-       </Box>
-       <Box>
-          <input 
+            value={"shirt"}
+            defaultChecked={category.includes("shirt")}
+            onChange={handleChange}
+          />
+          <label>Shirt</label>
+        </Box>
+        <Box>
+          <input
             type="checkbox"
             value={"tshirt"}
             defaultChecked={category.includes("tshirt")}
-            onChange={handleChange}  />
-            <label>Tshirt</label>
-       </Box>
-       <Box>
-          <input 
-            type="checkbox"
-            value={"dresses"}
-            defaultChecked={category.includes("dresses")}
-            onChange={handleChange}  />
-            <label>Dresses</label>
-       </Box>
+            onChange={handleChange}
+          />
+          <label>Tshirt</label>
+        </Box>
        </Box>
     </Box>
     

@@ -33,7 +33,16 @@ const Color = () => {
     <Box >
        
        <Box className={colorStyle.main}>
-       <Heading>COLOR</Heading>
+       <Heading
+       style={{
+        fontweight: 900,
+        textTransform: "uppercase",
+        fontSize: "25px",
+        clear: "both",
+        color: "#282c3f",
+        display: "block",
+       }}
+       >COLOR</Heading>
        <Box>
           <input 
             type="checkbox"

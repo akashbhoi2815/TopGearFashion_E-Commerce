@@ -3,5 +3,5 @@
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    border-bottom: 1px solid gray;
+    border-bottom: .1px solid gray;
 }

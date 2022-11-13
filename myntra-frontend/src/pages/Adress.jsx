@@ -4,12 +4,31 @@ import { Link, useParams } from 'react-router-dom';
 import { getMenData } from '../redux/appReducer/action';
 import styled from "styled-components"
 
+const formData = {
+   name:"",
+   number:"",
+   pincode:"",
+   adress:"",
+   state:"",
+   // checked:""
+}
 const Adress = () => {
    const { id } = useParams();
    const mendata = useSelector((store)=>store.appReducer.mensdata);
    const [currentData, setCurrentData] = useState({})
    const dispatch = useDispatch()
-   console.log('mendata: ',id, mendata);
+   // console.log('mendata: ',id, mendata);
+   const [data,setData] = useState(formData);
+   const [output,setOutput] = useState([]);
+   const handleClick = (e) =>{
+      const {value,type,name} = e.target;
+      setData({...data,[name]:value})
+   }
+   const handleSubmit = (e) =>{
+      e.preventDefault();
+      setOutput(data);
+      setData(formData)
+    }
 
  useEffect(() => {
    if(mendata.length === 0){
@@ -23,7 +42,10 @@ const Adress = () => {
      current && setCurrentData(current)
    }
  }, [id,mendata])
- console.log('currentData: ', currentData);
+//  console.log('currentData: ', currentData);
+   useEffect(() => {
+      localStorage.setItem('dataKey', JSON.stringify(data));
+    }, [data]);
     return (
         <>
         <Container>
@@ -47,20 +69,20 @@ const Adress = () => {
             <div class="block">
                 <div class="left-block">
                     <div class="addressStrip">
-                        <form action="" id="form">
+                        <form action="" id="form" onSubmit={handleSubmit}>
                             <h5 class="">CONTACT DETAILS</h5>
-                            <input type="text" name="" id="name" placeholder="Name*" />
-                            <input type="number" name="" id="mobile" placeholder="Mobile No*" />
+                            <input type="text" name="name" id="name" placeholder="Name*" value={data.name} onChange={handleClick}/>
+                            <input type="number" name="number" id="mobile" placeholder="Mobile No*" value={data.number} onChange={handleClick}/>
                             <h5 class="">ADDRESS</h5>
-                            <input type="number" name="" id="pin" placeholder="Pin Code*" />
+                            <input type="number" name="pincode" id="pin" placeholder="Pin Code*" value={data.pincoode} onChange={handleClick}/>
                             {/* <div id="pin-alert">
                                 pin code madatory alert 
                             </div> */}
-                            <input type="text" name="" id="address" placeholder="Address(House No, Building,Street, Area)*" />
+                            <input type="text" name="adress" id="address" placeholder="Address(House No, Building,Street, Area)*" value={data.adress} onChange={handleClick}/>
                             <input type="text" name="" id="locality" placeholder="Locality/Town" />
                             <div id="city-state">
                                     <div>
-                                    <select name="" id="state" class="select">
+                                    <select name="state" id="state" class="select" value={data.country} onChange={handleClick}>
                                         <option value="SelectState">Select State</option>
                                         <option value="Andra Pradesh">Andra Pradesh</option>
                                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -112,10 +134,10 @@ const Adress = () => {
                                 <div>Work</div>
                             </div>
                             <div id="checkbox">
-                                <input type="checkbox" name="" id="default-add" />
+                                {/* <input type="checkbox" name="" id="default-add" value={data.checked} onChange={handleClick}/> */}
                                 <label for=""> Make this my default address</label>
                             </div>
-                            <Link to={`/menpage/address/address2/${currentData?.Idno}`}> <button id="submit">ADD ADDRESS</button></Link>
+                            <Link to={`/menpage/address/address2/${currentData?.Idno}`} data={data}> <button type="submit" id="submit" >ADD ADDRESS</button></Link>
                         </form>
                     </div>
                 </div>

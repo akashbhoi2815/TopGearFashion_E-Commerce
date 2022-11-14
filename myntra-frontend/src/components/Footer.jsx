@@ -56,18 +56,18 @@ const Footer = () => {
     <div >
       <h4 className={styles.fontbold}>KEEP IN TOUCH</h4>
     
-      <Link to="https://www.facebook.com/myntra">
+      <a href="https://www.facebook.com/myntra">
       <span style={{"fontSize":"20px",}}><AiFillFacebook/></span>
-      </Link>
-      <Link to="https://twitter.com/myntra">
+      </a>
+      <a href="https://twitter.com/myntra">
       <span style={{"fontSize":"20px",}}><AiOutlineTwitter/></span>
-      </Link>
-      <Link to="https://www.youtube.com/user/myntradotcom">
+      </a>
+      <a href="https://www.youtube.com/user/myntradotcom">
       <span style={{"fontSize":"20px"}}><TiSocialInstagram/></span>
-      </Link>
-      <Link to="https://www.instagram.com/myntra/">
+      </a>
+      <a href="https://www.instagram.com/myntra/">
       <span style={{"fontSize":"20px"}}><BsYoutube/></span>
-      </Link>
+      </a>
    
     </div>
     </div>

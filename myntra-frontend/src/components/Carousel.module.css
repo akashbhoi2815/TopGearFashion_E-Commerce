@@ -1,58 +1,57 @@
+.div18 {
+    width: 100%;
+    margin-top: 80px;
+    /* border: 1px solid red; */
+    height: 470px;
 
-    .div18{
+}
+
+
+.div18image {
+
+    height: 180px;
+
+}
+
+
+
+@media only screen and (min-width: 0px) and (max-width: 320px) {
+
+    .div18 {
         width: 100%;
         margin-top: 20px;
         /* border: 1px solid red; */
-        height: 470px;
-      
-            }
-        
-        
-            .div18image{
-        
+        height: 300px;
+        width: fit-content;
+
+    }
+
+
+    .div18image {
+
         height: 180px;
-        
-            }
+
+    }
+
+}
 
 
 
-            @media only  screen and (min-width: 0px) and (max-width: 320px) {
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+    .div18 {
+        width: 100%;
+        margin-top: 20px;
+        /* border: 1px solid red; */
+        height: 300px;
 
-                .div18{
-                    width: 100%;
-                    margin-top: 20px;
-                    /* border: 1px solid red; */
-                    height: 300px;
-                    width: fit-content;
-                  
-                        }
-                    
-                    
-                        .div18image{
-                    
-                    height: 180px;
-                    
-                        }
-
-            }
+    }
 
 
+    .div18image {
 
-            @media only  screen and (min-width: 321px) and (max-width: 768px) {
-                .div18{
-                    width: 100%;
-                    margin-top: 20px;
-                    /* border: 1px solid red; */
-                    height: 300px;
-                  
-                        }
-                    
-                    
-                        .div18image{
-                    
-                    height: 180px;
-                    
-                        }
+        height: 180px;
+
+    }
 
 
-            }
+}

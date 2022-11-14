@@ -8,15 +8,10 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
     <div className={styles.left}>
-
-
       <Link to="/" >
        <img style={{borderRadius:"60%",height:"50px"}} src="TGF.jpeg" alt="topgearfashion-logo" />
       </Link>
-
-
-
-       <div className={styles.men}>
+       <div style={{color:"white"}} className={styles.men}>
           <Link to="/menpage">MEN</Link>
           <div className={styles.subMenu}>
              <ul>
@@ -590,7 +585,7 @@ const Navbar = () => {
           <input type="text" placeholder="Search for products, brands and more" />
        </div>
        <div   class="rightSideIcons profile">
-         <span ><CgProfile/></span>
+         <span style={{color:"#f6f6f8 "}} ><CgProfile/></span>
 
          <Link to="/signup">
          <label  for="">Profile</label>
@@ -618,12 +613,12 @@ const Navbar = () => {
           </div>
        </div>
        <div className={styles.rightSideIcons}>
-       <span ><BsFillHeartFill/></span>
-          <label style={{"fontSize":"15px","paddingTop":"5.5px"}} for="">Wishlist</label>
+       <span style={{color:"#f6f6f8 "}} ><BsFillHeartFill/></span>
+          <label style={{"fontSize":"15px","paddingTop":"5.5px", color:"#f6f6f8"}} for="">Wishlist</label>
        </div>
        <div class="rightSideIcons bag">
-       <span><HiOutlineShoppingBag/></span>
-          <label for="">Bag</label>
+       <span style={{color:"#f6f6f8 "}} ><HiOutlineShoppingBag/></span>
+          <label for="" style={{color:"#f6f6f8 "}} >Bag</label>
        </div>
     </div>
     

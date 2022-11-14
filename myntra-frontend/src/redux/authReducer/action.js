@@ -98,6 +98,8 @@ export const login = (payload) => (dispatch) => {
     data: payload,
   })
     .then((r) => {
+      console.log('r: ', r);
+
       if (r.data.msg == "Login Failed") {
         alert("Login Failed");
       } else {

@@ -13,7 +13,7 @@ const Adress2 = () => {
 
  useEffect(() => {
    if(mendata.length === 0){
-     dispatch(getMenData)
+      dispatch(getMenData())
    }
  }, [dispatch,mendata.length])
 

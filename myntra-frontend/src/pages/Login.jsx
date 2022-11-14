@@ -51,7 +51,7 @@ export default function Login() {
         navigate(comingFrom, {replace:true})
      }
     })
-    // setState({email:"",password:""})
+    setState({email:"",password:""})
    
   };
 

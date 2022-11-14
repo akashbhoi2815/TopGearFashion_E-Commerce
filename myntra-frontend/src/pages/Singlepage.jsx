@@ -16,7 +16,7 @@ console.log('mendata: ',id, mendata);
 
  useEffect(() => {
    if(mendata.length === 0){
-     dispatch(getMenData)
+     dispatch(getMenData())
    }
  }, [dispatch,mendata.length])
 

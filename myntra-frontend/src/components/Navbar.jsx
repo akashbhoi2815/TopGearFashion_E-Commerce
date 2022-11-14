@@ -8,7 +8,11 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
     <div className={styles.left}>
-       {/* <img src="images/Myntra_logo.png" alt="Myntra_logo" /> */}
+    <Link to="/">
+        <div>
+       <img style={{borderRadius:"50%",height:"40px"}} src="TGF.jpeg" alt="Myntra_logo" />
+       </div>
+       </Link>
 
        <div className={styles.men}>
           <Link to="/menpage">MEN</Link>
@@ -620,6 +624,7 @@ const Navbar = () => {
           <label for="">Bag</label>
        </div>
     </div>
+    
  </div>
   )
 }

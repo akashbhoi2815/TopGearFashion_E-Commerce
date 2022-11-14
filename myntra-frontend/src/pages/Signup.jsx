@@ -47,6 +47,9 @@ export default function Signup() {
     e.preventDefault();
     dispatch(signup(state)).then((data)=>{
       console.log(data)
+      if(data?.payload?.data === "Signup Successfull"){
+        navigate("/login", {replace:true})
+     }
     })
     setState({email:"",password:"",name:"",mobile:"",gender:""})
    

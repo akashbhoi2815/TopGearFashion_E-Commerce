@@ -22,14 +22,7 @@ const WomenPage = () => {
 
   const sortBy = searchParams.get("sortBy");
 
-  const [isVisible, setIsVisible] = useState(false);
-
-  function over(e) {
-    setIsVisible(true);
-  }
-  function out(e) {
-    setIsVisible(false);
-  }
+  
 
   useEffect(() => {
     if (location || mendata.length === 0) {
@@ -38,7 +31,7 @@ const WomenPage = () => {
           categories: searchParams.getAll("categories"),
           brand: searchParams.getAll("brand"),
           color: searchParams.getAll("color"),
-          //   _sort: sortBy && "year",
+            _sort: sortBy && "price",
           //   _order: sortBy,
         },
       };

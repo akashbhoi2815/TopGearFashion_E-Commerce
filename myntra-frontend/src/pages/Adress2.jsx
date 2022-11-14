@@ -15,6 +15,13 @@ const Adress2 = (prop) => {
       }
    }, [dispatch, mendata.length])
 
+
+ useEffect(() => {
+   if(mendata.length === 0){
+      dispatch(getMenData())
+   }
+ }, [dispatch,mendata.length])
+
    useEffect(() => {
       if (id) {
          const current = mendata.find((e) => e.Idno == +id);

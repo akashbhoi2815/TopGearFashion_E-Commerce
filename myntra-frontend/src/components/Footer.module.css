@@ -1,211 +1,126 @@
-
-.shadow{
-    box-shadow: rgb(250,251,252);
+.shadow {
+    box-shadow: rgb(250, 251, 252);
 }
 
-.footer{
+.footer {
 
-/* border: 1px solid red; */
-    display: flex;
-    justify-content: space-around;
-    display: grid;
-    grid-template-columns: repeat(4,auto);
-    line-height: 20px;
-    font-size: small;
-    text-align: left;
-    
-    color: grey;
-    }
-
-    .fontbold{
-        font-weight: bold;
-    }
-    
-    
-    
-    
-    .popular{
-        /* border: 1px solid red; */
-      
-    text-align: left;
-    font-size: medium;
-    font-weight: lighter;
-    color: grey;
-    margin-left: 90px;
-    margin-right: 70px;
-    margin-top: 10px;
-    
-    }
-    
-    .reserverd{
-        display: flex;
-        justify-content: space-between;
-        margin-left: 90px;
-        margin-right: 70px;
-        color: grey;
-        margin-top: 10px;
-    }
-    
-    
-    
-    .googlestore{
-        width: 230px;
-        justify-content: left;
-    
-        width: 150px;
-    }
-    
-    .appstore{
-        
-        justify-content: left;
-      
-        width: 150px;
-    }
-    
-    .imgdiv{
-        height: 60px;
-    }
-    
-    
-    .h{
-       margin-top: 7px;
-       line-height: 6px;
-    }
-    
-   
-    
-    
-    
-    @media only screen and (min-width: 0px) and (max-width: 320px){
-    
-        
-    
-    
-.shadow{
-    box-shadow: rgb(250,251,252);
-    border: 1px solid red;
-    width: 100%;
-}
-
-.footer{
-
-/* border: 1px solid red; */
-    display: flex;
-    justify-content: space-around;
-    display: grid;
-    grid-template-columns: repeat(2,auto);
-    line-height: 20px;
-    font-size: small;
-    text-align: left;
-  width: fit-content;
-    color: grey;
-    }
-
-    .fontbold{
-        font-weight: bold;
-    }
-    
-    
-    
-    
-    .popular{
-        /* border: 1px solid red; */
-      
-    text-align: left;
-    font-size: medium;
-    font-weight: lighter;
-    color: grey;
-    margin-left: 90px;
-    margin-right: 70px;
-    margin-top: 10px;
-    
-    }
-    
-    .reserverd{
-        display: flex;
-        justify-content: space-between;
-        margin-left: 90px;
-        margin-right: 70px;
-        color: grey;
-        margin-top: 10px;
-    }
-    
-    
-    
-    .googlestore{
-        width: 230px;
-        justify-content: left;
-    
-        width: 150px;
-    }
-    
-    .appstore{
-        
-        justify-content: left;
-      
-        width: 150px;
-    }
-    
-    .imgdiv{
-        height: 60px;
-    }
-    
-    
-    .h{
-       margin-top: 7px;
-       line-height: 6px;
-    }
-    
-    
-    
-    }
-    
-    
-    @media only  screen and (min-width: 321px) and (max-width: 768px) {
-        
-     
-.shadow{
-    box-shadow: rgb(250,251,252);
     /* border: 1px solid red; */
-    width: fit-content;
+    display: flex;
+    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    line-height: 20px;
+    font-size: small;
+    text-align: left;
+
+    color: grey;
 }
 
-.footer{
+.fontbold {
+    font-weight: bold;
+}
 
-/* border: 1px solid red; */
+
+
+
+.popular {
+    /* border: 1px solid red; */
+
+    text-align: left;
+    font-size: medium;
+    font-weight: lighter;
+    color: grey;
+    margin-left: 90px;
+    margin-right: 70px;
+    margin-top: 10px;
+
+}
+
+.reserverd {
     display: flex;
     justify-content: space-between;
-    display: grid;
-    grid-template-columns: repeat(3,auto);
-    line-height: 20px;
-    font-size: small;
-    text-align: left;
-  width: fit-content;
-    color: grey;
     margin-left: 90px;
+    margin-right: 70px;
+    color: grey;
+    margin-top: 10px;
+}
+
+
+
+.googlestore {
+    width: 230px;
+    justify-content: left;
+
+    width: 150px;
+}
+
+.appstore {
+
+    justify-content: left;
+
+    width: 150px;
+}
+
+.imgdiv {
+    height: 60px;
+}
+
+
+.h {
+    margin-top: 7px;
+    line-height: 6px;
+}
+
+
+
+
+
+@media only screen and (min-width: 0px) and (max-width: 320px) {
+
+
+
+
+    .shadow {
+        box-shadow: rgb(250, 251, 252);
+        border: 1px solid red;
+        width: 100%;
     }
 
-    .fontbold{
+    .footer {
+
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: space-around;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        line-height: 20px;
+        font-size: small;
+        text-align: left;
+        width: fit-content;
+        color: grey;
+    }
+
+    .fontbold {
         font-weight: bold;
     }
-    
-    
-    
-    
-    .popular{
+
+
+
+
+    .popular {
         /* border: 1px solid red; */
-      
-    text-align: left;
-    font-size: medium;
-    font-weight: lighter;
-    color: grey;
-    /* margin-left: 90px;
-    margin-right: 70px;
-    margin-top: 10px; */
-    
+
+        text-align: left;
+        font-size: medium;
+        font-weight: lighter;
+        color: grey;
+        margin-left: 90px;
+        margin-right: 70px;
+        margin-top: 10px;
+
     }
-    
-    .reserverd{
+
+    .reserverd {
         display: flex;
         justify-content: space-between;
         margin-left: 90px;
@@ -213,43 +128,119 @@
         color: grey;
         margin-top: 10px;
     }
-    
-    
-    
-    .googlestore{
+
+
+
+    .googlestore {
         width: 230px;
         justify-content: left;
-    
+
         width: 150px;
     }
-    
-    .appstore{
-        
+
+    .appstore {
+
         justify-content: left;
-      
+
         width: 150px;
     }
-    
-    .imgdiv{
+
+    .imgdiv {
         height: 60px;
     }
-    
-    
-    .h{
-       margin-top: 7px;
-       line-height: 6px;
-    }
-    
-    }
-    
-    
-    
-    @media only screen and (min-width: 321px) and (max-width: 768px){
-    
 
-        
+
+    .h {
+        margin-top: 7px;
+        line-height: 6px;
     }
-    
-    
-    
-    
+
+
+
+}
+
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+
+
+    .shadow {
+        box-shadow: rgb(250, 251, 252);
+        /* border: 1px solid red; */
+        width: fit-content;
+    }
+
+    .footer {
+
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        line-height: 20px;
+        font-size: small;
+        text-align: left;
+        width: fit-content;
+        color: grey;
+        margin-left: 90px;
+    }
+
+    .fontbold {
+        font-weight: bold;
+    }
+
+
+
+
+    .popular {
+        /* border: 1px solid red; */
+
+        text-align: left;
+        font-size: medium;
+        font-weight: lighter;
+        color: grey;
+        /* margin-left: 90px;
+    margin-right: 70px;
+    margin-top: 10px; */
+
+    }
+
+    .reserverd {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 90px;
+        margin-right: 70px;
+        color: grey;
+        margin-top: 10px;
+    }
+
+
+
+    .googlestore {
+        width: 230px;
+        justify-content: left;
+
+        width: 150px;
+    }
+
+    .appstore {
+
+        justify-content: left;
+
+        width: 150px;
+    }
+
+    .imgdiv {
+        height: 60px;
+    }
+
+
+    .h {
+        margin-top: 7px;
+        line-height: 6px;
+    }
+
+}
+
+
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {}

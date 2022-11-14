@@ -139,8 +139,12 @@
 .categories {
     text-align: left;
     font-size: 12px;
-    color: gray;
+    color: black;
     font-weight: lighter;
+}
+.categories h3{
+    font-size: 15px;
+    font-weight: 400;
 }
 
 .categories p,
@@ -233,7 +237,6 @@ sup {
 
 .studio .categories h3 {
     color: orangered;
-
 }
 
 .studio {

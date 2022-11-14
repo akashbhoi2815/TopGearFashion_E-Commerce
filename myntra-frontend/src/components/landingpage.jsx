@@ -1,5 +1,6 @@
 import { Divider } from "@chakra-ui/react"
 import React from "react"
+import { Carousel } from "./Carousel"
 import Footer from "./Footer"
 import styles from './landingpage.module.css'
 import Navbar from "./Navbar"
@@ -22,7 +23,9 @@ return(
 <Navbar/>
 
 
-
+<div>
+    <Carousel/>
+</div>
 
 <div className={styles.deals}>
     <img src="https://assets.myntassets.com/f_webp,w_75,c_limit,fl_progressive,dpr_2.0/assets/images/2022/11/10/a57192fa-18a8-452f-b6f7-878a25b5aa901668071775302-image_jpeg1977428923.jpg"></img>

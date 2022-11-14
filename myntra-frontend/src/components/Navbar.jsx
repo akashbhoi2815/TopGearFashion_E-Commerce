@@ -2,13 +2,17 @@ import React from 'react'
 import styles from './Navbar.module.css'
 import { CgProfile } from 'react-icons/cg';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
-import { CiHeart } from 'react-icons/ci';
+import {BsFillHeartFill} from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <div className={styles.navbar}>
     <div className={styles.left}>
-       {/* <img src="images/Myntra_logo.png" alt="Myntra_logo" /> */}
+      <Link to="/">
+        <div>
+       <img style={{borderRadius:"50%",height:"40px"}} src="TGF.jpeg" alt="Myntra_logo" />
+       </div>
+       </Link>
 
        <div className={styles.men}>
           <Link to="/menpage">MEN</Link>
@@ -584,10 +588,10 @@ const Navbar = () => {
           <input type="text" placeholder="Search for products, brands and more" />
        </div>
        <div   class="rightSideIcons profile">
-         <span><CgProfile/></span>
+         <span ><CgProfile/></span>
 
          <Link to="/signup">
-         <label for="">Profile</label>
+         <label  for="">Profile</label>
          </Link>
           
           <div  className={styles.signin}>
@@ -612,8 +616,8 @@ const Navbar = () => {
           </div>
        </div>
        <div className={styles.rightSideIcons}>
-       <span><CiHeart/></span>
-          <label for="">Wishlist</label>
+       <span ><BsFillHeartFill/></span>
+          <label style={{"fontSize":"15px","paddingTop":"5.5px"}} for="">Wishlist</label>
        </div>
        <div class="rightSideIcons bag">
        <span><HiOutlineShoppingBag/></span>

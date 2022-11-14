@@ -61,7 +61,7 @@ app.post("/login",async(req,res)=>{
         }
     })
    }else{
-    res.status(400).send({"msg":"User Doesn't Exist"})
+    res.send({"msg":"User Doesn't Exist"})
    }
 })
 

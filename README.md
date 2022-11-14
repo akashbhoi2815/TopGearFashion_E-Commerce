@@ -57,3 +57,11 @@ This is a collaborative project. We cloned the online website of TopGearFashion 
 ## Womens Page
 
 <img src="./myntra-frontend/public/tgfwomenspage.png">
+
+## Place Order
+
+<img src="./myntra-frontend/public/tgfplaceorder.png" />
+
+## Address
+
+<img src="./myntra-frontend/public/tgfaddress.png" />

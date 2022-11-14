@@ -21,10 +21,10 @@ return(
 </div> */}
 
 <Navbar/>
-<div>
+{/* <div> */}
     <Carousel/>
-</div>
-<hr style={{border:"1px solid red",position:"sticky"}}/>
+{/* </div> */}
+{/* <hr style={{border:"1px solid red",position:"sticky"}}/> */}
 <br />
 
 

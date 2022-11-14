@@ -22,7 +22,7 @@ app.post("/signup",async(req,res)=>{
     }
     bcrypt.hash(password,4,async function(err,hash){
         if(err){
-            res.send("something Went wrong")
+            res.status(400).send("something Went wrong")
         }
         const newUser=new UsersModel({
             name,
@@ -36,28 +36,33 @@ app.post("/signup",async(req,res)=>{
             res.send("Signup Successfull")
         }
         catch{
-            res.send("Please enter Correctly")
+            res.status(400).send("Please enter Correctly")
         }
     })
 })
 app.post("/login",async(req,res)=>{
     const {email,password}=req.body
     const user=await UsersModel.findOne({email});
+    console.log(user)
+    if(user){
     const hashed_password=user.password
     const user_id=user._id;
     console.log(user)
     // console.log(user_id);
     bcrypt.compare(password,hashed_password,function(err,result){
         if(err){
-            res.send({"msg":"Something went wrong"})
+            res.status(400).send({"msg":"Something went wrong"})
         }
         if(result){
             const token=jwt.sign({user_id},process.env.SECRET_KEY);
             res.send({"msg":"Login Successfull",token})
         }else{
-            res.send({"msg":"Login Failed"})
+            res.status(400).send({"msg":"Login Failed"})
         }
     })
+   }else{
+    res.send({"msg":"User Doesn't Exist"})
+   }
 })
 
 app.get("/users",async(req,res)=>{

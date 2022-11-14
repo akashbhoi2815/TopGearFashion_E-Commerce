@@ -6,12 +6,12 @@ import brandStyle from './filter.module.css'
 const Brand = () => {
     const [searchParams,setSearchParams]=useSearchParams();
     const initialBrandParams = searchParams.getAll("brand");
-    const [brands, setBrands] = useState(initialBrandParams || []);
+    const [brand, setBrands] = useState(initialBrandParams || []);
 
     const handleChange = (e) => {
         const option = e.target.value;
-        let newBrands = [...brands];
-        if(brands.includes(option)){
+        let newBrands = [...brand];
+        if(brand.includes(option)){
             newBrands.splice(newBrands.indexOf(option),1);
         }else{
             newBrands.push(option);
@@ -20,10 +20,10 @@ const Brand = () => {
     }
   
     useEffect(() => {
-     if(brands){
-      setSearchParams({ brand: brands});
+     if(brand){
+      setSearchParams({ brand: brand});
      }
-    }, [brands,setSearchParams])
+    }, [brand,setSearchParams])
     
 
 
@@ -44,7 +44,7 @@ const Brand = () => {
           <input 
             type="checkbox"
             value={"Clovia"}
-            defaultChecked={brands.includes("Clovia")}
+            defaultChecked={brand.includes("Clovia")}
             onChange={handleChange}  />
             <label>Clovia</label>
        </Box>
@@ -52,7 +52,7 @@ const Brand = () => {
           <input 
             type="checkbox"
             value={"Mast & Harbour"}
-            defaultChecked={brands.includes("Mast & Harbour")}
+            defaultChecked={brand.includes("Mast & Harbour")}
             onChange={handleChange}  />
             <label>Mast & Harbour</label>
        </Box>
@@ -60,7 +60,7 @@ const Brand = () => {
           <input 
             type="checkbox"
             value={"Dressberry"}
-            defaultChecked={brands.includes("Dressberry")}
+            defaultChecked={brand.includes("Dressberry")}
             onChange={handleChange}  />
             <label>Dressberry</label>
        </Box>
@@ -68,7 +68,7 @@ const Brand = () => {
           <input 
             type="checkbox"
             value={"HERE&NOW"}
-            defaultChecked={brands.includes("HERE&NOW")}
+            defaultChecked={brand.includes("HERE&NOW")}
             onChange={handleChange}  />
             <label>HERE&NOW</label>
        </Box>
@@ -76,7 +76,7 @@ const Brand = () => {
           <input 
             type="checkbox"
             value={"Celfie Design"}
-            defaultChecked={brands.includes("Celfie Design")}
+            defaultChecked={brand.includes("Celfie Design")}
             onChange={handleChange}  />
             <label>Celfie Design</label>
        </Box>
@@ -84,7 +84,7 @@ const Brand = () => {
           <input 
             type="checkbox"
             value={"Lakme"}
-            defaultChecked={brands.includes("Lakme")}
+            defaultChecked={brand.includes("Lakme")}
             onChange={handleChange}  />
             <label>Lakme</label>
        </Box>

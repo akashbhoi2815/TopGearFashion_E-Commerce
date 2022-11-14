@@ -19,7 +19,7 @@ const Category = () => {
         }
         setCategory(newCategory);
     }
-  console.log('category: ', category);
+ 
     useEffect(() => {
      if(category){
         setSearchParams({categories:category});

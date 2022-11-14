@@ -14,7 +14,7 @@ const getWomenRequest = ( )=>{
 
 export const getMenData = (params)=>(dispatch)=>{
      dispatch(getMenRequest())
-     return axios.get("https://topgearfashion.onrender.com/tgf/mensdata",params)
+     return axios.get("https://monsterjobs.herokuapp.com/tgfmensdata",params)
        .then((r)=>{
         return dispatch({
             type:types.GETMEN_SUCCESS,
@@ -30,7 +30,7 @@ export const getMenData = (params)=>(dispatch)=>{
 }
 export const getwomenData = (params)=>(dispatch)=>{
     dispatch(getWomenRequest())
-    return axios.get("https://topgearfashion.onrender.com/tgf/womensdata",params)
+    return axios.get("https://monsterjobs.herokuapp.com/tgfwomensdata",params)
       .then((r)=>{
        return dispatch({
            type:types.GETWOMEN_SUCCESS,

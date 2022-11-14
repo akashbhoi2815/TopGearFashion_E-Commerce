@@ -73,8 +73,8 @@ export const signup = (payload) => (dispatch) => {
     data: payload,
   })
     .then((r) => {
-      console.log(r);
-      if (r.data == "User already Exist Try to login") {
+      
+      if (r.data == "User already Exist Try to login ") {
         alert("User already Exist Please Try To Login");
       } else {
         alert("Signup Successfully");
@@ -82,6 +82,7 @@ export const signup = (payload) => (dispatch) => {
       return dispatch(signupSuccess(r));
     })
     .catch((e) => {
+      alert("something Went wrong")
       dispatch(signupFailure(e));
     });
 };
@@ -98,18 +99,19 @@ export const login = (payload) => (dispatch) => {
     data: payload,
   })
     .then((r) => {
-      console.log('r: ', r);
-
-      if (r.data.msg == "Login Failed") {
-        alert("Login Failed");
-      } else {
-        alert("Login Successfully");
-        console.log("token", r.data.token);
-      }
+      console.log("r",r);
+     if(r.data.msg==="User Doesn't Exist"){
+       alert("User Doesn't Exist")
+     }else{
+      alert("Login Successfully");
+     }
+        console.log("token", r.data.msg);
       localStorage.setItem("token", r.data.token);
       return dispatch(loginSuccess(r));
     })
     .catch((e) => {
+      console.log('e: ', e);
+      alert("Login Failed");
       dispatch(loginFailure(e));
     });
 };

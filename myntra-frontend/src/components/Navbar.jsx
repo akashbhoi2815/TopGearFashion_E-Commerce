@@ -575,9 +575,9 @@ const Navbar = () => {
           <a href="#">STUDIO <sup>NEW</sup></a>
           <div className={styles.subMenu}>
              <ul className={styles.studio}>
-                <img src="images/studio-logo-new.svg" alt="studio_logo" />
+                <img src="https://constant.myntassets.com/web/assets/img/studio-logo-new.svg" alt="studio_logo" />
                 <p>Your daily inspiration for everything fashion</p>
-                <img  className={styles.studioBanner}  src="images/sudio-nav-banner.png" alt="nav_banner" />
+                <img  className={styles.studioBanner}  src="https://constant.myntassets.com/web/assets/img/sudio-nav-banner.png" alt="nav_banner" />
                 <button>EXPLORE STUDIO <span>&#8250;</span></button>
              </ul>
           </div>

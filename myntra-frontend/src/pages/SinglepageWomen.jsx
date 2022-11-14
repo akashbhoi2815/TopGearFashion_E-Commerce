@@ -13,7 +13,7 @@ const SinglepageWomen = () => {
 
  useEffect(() => {
    if(womendata.length === 0){
-     dispatch(getwomenData)
+      dispatch(getMenData())
    }
  }, [dispatch,womendata.length])
 

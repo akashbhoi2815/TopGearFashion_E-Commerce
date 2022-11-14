@@ -21,11 +21,12 @@ return(
 </div> */}
 
 <Navbar/>
-
-
 <div>
     <Carousel/>
 </div>
+<hr style={{border:"1px solid red",position:"sticky"}}/>
+<br />
+
 
 <div className={styles.deals}>
     <img src="https://assets.myntassets.com/f_webp,w_75,c_limit,fl_progressive,dpr_2.0/assets/images/2022/11/10/a57192fa-18a8-452f-b6f7-878a25b5aa901668071775302-image_jpeg1977428923.jpg"></img>

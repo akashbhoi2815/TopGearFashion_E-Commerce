@@ -16,7 +16,7 @@ const Payment = () => {
 
  useEffect(() => {
    if(mendata.length === 0){
-     dispatch(getMenData)
+      dispatch(getMenData())
    }
  }, [dispatch,mendata.length])
 

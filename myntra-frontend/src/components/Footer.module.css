@@ -1,36 +1,49 @@
 
-
+.shadow{
+    box-shadow: rgb(250,251,252);
+}
 
 .footer{
 
-
+/* border: 1px solid red; */
     display: flex;
     justify-content: space-around;
     display: grid;
     grid-template-columns: repeat(4,auto);
-    line-height: 10px;
+    line-height: 20px;
     font-size: small;
     text-align: left;
     
     color: grey;
+    }
+
+    .fontbold{
+        font-weight: bold;
     }
     
     
     
     
     .popular{
-    
+        /* border: 1px solid red; */
+      
     text-align: left;
     font-size: medium;
     font-weight: lighter;
     color: grey;
+    margin-left: 90px;
+    margin-right: 70px;
+    margin-top: 10px;
     
     }
     
     .reserverd{
         display: flex;
         justify-content: space-between;
+        margin-left: 90px;
+        margin-right: 70px;
         color: grey;
+        margin-top: 10px;
     }
     
     
@@ -56,12 +69,10 @@
     
     .h{
        margin-top: 7px;
-       line-height: 0px;
+       line-height: 6px;
     }
     
-    .he{
-        line-height: 0px;
-    }
+   
     
     
     
@@ -70,60 +81,81 @@
         
     
     
-    .footer{
+.shadow{
+    box-shadow: rgb(250,251,252);
+    border: 1px solid red;
+    width: 100%;
+}
+
+.footer{
+
+/* border: 1px solid red; */
+    display: flex;
+    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    line-height: 20px;
+    font-size: small;
+    text-align: left;
+  width: fit-content;
+    color: grey;
+    }
+
+    .fontbold{
+        font-weight: bold;
+    }
     
-        width: fit-content;
+    
+    
+    
+    .popular{
+        /* border: 1px solid red; */
+      
+    text-align: left;
+    font-size: medium;
+    font-weight: lighter;
+    color: grey;
+    margin-left: 90px;
+    margin-right: 70px;
+    margin-top: 10px;
+    
+    }
+    
+    .reserverd{
         display: flex;
         justify-content: space-between;
-        display: grid;
-        grid-template-columns: repeat(2,auto);
-        line-height: 12px;
-        font-size: small;
-        text-align: left;
-        
+        margin-left: 90px;
+        margin-right: 70px;
         color: grey;
-        }
+        margin-top: 10px;
+    }
+    
+    
+    
+    .googlestore{
+        width: 230px;
+        justify-content: left;
+    
+        width: 150px;
+    }
+    
+    .appstore{
         
-        
-        
-        
-        .popular{
-        
+        justify-content: left;
       
-        font-size: small;
-        font-weight: lighter;
-        color: grey;
-      
-        text-align: justify;
-        }
-        
-        .reserverd{
-            display: flex;
-            justify-content: space-between;
-            color: grey;
-            font-size: small;
-            font-weight:lighter ;
-          
-        }
+        width: 150px;
+    }
+    
+    .imgdiv{
+        height: 60px;
+    }
     
     
-        .imgdiv{
+    .h{
+       margin-top: 7px;
+       line-height: 6px;
+    }
     
-            height: 30px;
-        }
-    
-    
-        .h{
-            margin-top: 0px;
-            line-height: 14px;
-         }
-         
-         .he{
-      
-          margin-top: -13px;
-             line-height: 14px;
-         }
-         
     
     
     }
@@ -131,55 +163,91 @@
     
     @media only  screen and (min-width: 321px) and (max-width: 768px) {
         
-    .footer{
+     
+.shadow{
+    box-shadow: rgb(250,251,252);
+    /* border: 1px solid red; */
+    width: fit-content;
+}
+
+.footer{
+
+/* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    line-height: 20px;
+    font-size: small;
+    text-align: left;
+  width: fit-content;
+    color: grey;
+    margin-left: 90px;
+    }
+
+    .fontbold{
+        font-weight: bold;
+    }
     
-       
-        width: fit-content;
+    
+    
+    
+    .popular{
+        /* border: 1px solid red; */
+      
+    text-align: left;
+    font-size: medium;
+    font-weight: lighter;
+    color: grey;
+    /* margin-left: 90px;
+    margin-right: 70px;
+    margin-top: 10px; */
+    
+    }
+    
+    .reserverd{
         display: flex;
-       
-        display: grid;
-        grid-template-columns: repeat(3,auto);
-        line-height: 12px;
-        font-size: small;
-        text-align: left;
-        
+        justify-content: space-between;
+        margin-left: 90px;
+        margin-right: 70px;
         color: grey;
-        }
+        margin-top: 10px;
+    }
+    
+    
+    
+    .googlestore{
+        width: 230px;
+        justify-content: left;
+    
+        width: 150px;
+    }
+    
+    .appstore{
         
-        
-        
-        
-        .popular{
-        
+        justify-content: left;
       
-        font-size: small;
-        font-weight: lighter;
-        color: grey;
-      
-        text-align: justify;
-        }
-        
-        .reserverd{
-            display: flex;
-            justify-content: space-between;
-            color: grey;
-            font-size: small;
-            font-weight:lighter ;
-           
-        }
+        width: 150px;
+    }
     
-        .app{
+    .imgdiv{
+        height: 60px;
+    }
     
-    margin-left: 10px;
     
-        }
+    .h{
+       margin-top: 7px;
+       line-height: 6px;
+    }
     
     }
     
     
     
-    @media only screen and (min-width: 320px) and (max-width: 1000px){
+    @media only screen and (min-width: 321px) and (max-width: 768px){
     
+
+        
     }
     
     

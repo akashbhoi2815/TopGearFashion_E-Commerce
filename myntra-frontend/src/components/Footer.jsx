@@ -5,14 +5,16 @@ import { AiOutlineTwitter } from 'react-icons/ai';
 import { TiSocialInstagram } from 'react-icons/ti';
 import { BsYoutube } from 'react-icons/bs';
 import StoreBadge from 'react-store-badge';
+import { Link } from 'react-router-dom';
+import { Divider } from '@chakra-ui/react';
 const Footer = () => {
   return (
-    <div>
+    <div className={styles.shadow}>
 
-
+<Divider/>
 <div className={styles.footer}>
     <div>
-      <h4>ONLINE SHOPPING</h4>
+      <p className={styles.fontbold}>ONLINE SHOPPING</p>
       <p>Men</p>
       <p>Women</p>
       <p>Kids</p>
@@ -24,7 +26,7 @@ const Footer = () => {
 
 
     <div>
-      <h4>CUSTOMER POLICIES</h4>
+      <h4 className={styles.fontbold}>CUSTOMER POLICIES</h4>
       <p>Contact Us</p>
       <p>FAQ</p>
       <p>T&C</p>
@@ -41,7 +43,7 @@ const Footer = () => {
 
     <div>
     <div  className={styles.store}>
-      <h4 className={styles.app}>EXPERIENCE MYNTRA APP ON MOBILE</h4>
+      <h4  className={styles.fontbold}>EXPERIENCE MYNTRA APP ON MOBILE</h4>
       <StoreBadge
      
 
@@ -51,12 +53,21 @@ const Footer = () => {
       
     </div>
 
-    <div>
-      <h4>KEEP IN TOUCH</h4>
+    <div >
+      <h4 className={styles.fontbold}>KEEP IN TOUCH</h4>
+    
+      <Link to="https://www.facebook.com/myntra">
       <span style={{"fontSize":"20px",}}><AiFillFacebook/></span>
+      </Link>
+      <Link to="https://twitter.com/myntra">
       <span style={{"fontSize":"20px",}}><AiOutlineTwitter/></span>
+      </Link>
+      <Link to="https://www.youtube.com/user/myntradotcom">
       <span style={{"fontSize":"20px"}}><TiSocialInstagram/></span>
+      </Link>
+      <Link to="https://www.instagram.com/myntra/">
       <span style={{"fontSize":"20px"}}><BsYoutube/></span>
+      </Link>
    
     </div>
     </div>
@@ -78,7 +89,7 @@ const Footer = () => {
 
 
     <div>
-      <h4>USEFUL LINKS</h4>
+      <h4 className={styles.fontbold}>USEFUL LINKS</h4>
      <p>Blog</p>
      <p>Careers</p>
      <p>Site Map</p>
@@ -91,9 +102,9 @@ const Footer = () => {
     </div>
 
 
-
+<Divider/>
     <div className={styles.popular}>
-      <h4>POPULAR SEARCHES</h4>
+      <h4 className={styles.fontbold}>POPULAR SEARCHES</h4>
       <p>Makeup | Dresses For Girls | T-Shirts | Sandals | Headphones | Babydolls | Blazers For Men | Handbags | Ladies Watches | Bags | Sport Shoes | Reebok Shoes | Puma Shoes | Boxers | Wallets | Tops | Earrings | Fastrack Watches | Kurtis | Nike | Smart Watches | Titan Watches | Designer Blouse | Gowns | Rings | Cricket Shoes | Forever 21 | Eye Makeup | Photo Frames | Punjabi Suits | Bikini | Myntra Fashion Show | Lipstick | Saree | Watches | Dresses | Lehenga | Nike Shoes | Goggles | Bras | Suit | Chinos | Shoes | Adidas Shoes | Woodland Shoes | Jewellery | Designers Sarees</p>
     </div>
 
@@ -107,7 +118,7 @@ const Footer = () => {
     </div>
     </div>
 
-
+    <Divider/>
     </div>
   )
 }

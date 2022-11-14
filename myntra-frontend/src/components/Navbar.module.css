@@ -21,12 +21,13 @@
 } */
 
 .navbar {
-    /*    
-      border: 1px solid blue; */
+    overflow: hidden; 
+   
+    position: fixed;  
+    top: 0; 
+    width: 100%;
         position: sticky;
-        top: 0;
-        background-color: white;
-        width: 100%;
+         background-color: #ed64a6;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -373,7 +374,7 @@
     }
     
     
-    /* 
+    
     @media only screen and (min-width: 320px) and (max-width: 1300px) {
        
         .homeLiving {
@@ -383,9 +384,9 @@
             width: 600px;
             overflow: scroll;
         }
-    } */
+    } 
       /* Medium Screen */
-    /* @media only screen and (min-width: 320px) and (max-width: 1000px) {
+     @media only screen and (min-width: 320px) and (max-width: 1000px) {
         .left {
             width: 40%;
             margin: 0px 10px;
@@ -408,11 +409,11 @@
             overflow: scroll;
         }
         
-      } */
+      } 
     
     
       /* Small Screen */
-      /* @media only screen and (min-width: 320px) and (max-width: 699px) {
+      @media only screen and (min-width: 321px) and (max-width: 768px) {
         .left {
             width: 40%;
             margin: 0px 10px;
@@ -445,7 +446,7 @@
     
       }
     
-      @media only screen and (min-width: 0px) and (max-width: 500px) {
+      @media only screen and (min-width: 0px) and (max-width: 320px) {
        
         .left {
             width: 100%;
@@ -473,5 +474,5 @@
             width: 300px;
             overflow: scroll;
         }
-    } */
+    } 
     

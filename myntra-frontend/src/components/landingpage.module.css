@@ -5,6 +5,7 @@
 
     width: 100%;
     display: flex;
+    margin-top: 40px;
     
     
     }
@@ -37,7 +38,7 @@
     
     .category{
     
-        border: 1px solid red;
+        /* border: 1px solid red; */
         display: flex;
         display: grid;
         grid-template-columns: repeat(4,auto);
@@ -91,15 +92,56 @@
     @media only  screen and (min-width: 321px) and (max-width: 768px) {
     
         
-    .deals{
-        width: 100%;
+  
+
+.deals{
+
+
+    width: 100%;
+    display: flex;
+    margin-top: 40px;
     
-        }
+    
+    }
+    
+    .deals>img{
+        height: 76px;
+    }
+
+
+    .budget{
+        width: 100%;
+        display: flex;
+        display: grid;
+        grid-template-columns: repeat(7,auto);
+      
         
-        .deals>img{
-            height: 155px;
-        }
-        
+    }
+
+  
+
+
+    .special{
+
+        display: flex;
+        /* border: 1px solid red; */
+
+
+    }
+
+    .special>img{
+        height: 98px;
+    }
+    
+    
+    .category{
+    
+        /* border: 1px solid red; */
+        display: flex;
+        display: grid;
+        grid-template-columns: repeat(4,auto);
+       
+    }
     
     }
     

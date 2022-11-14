@@ -73,7 +73,7 @@ export const signup = (payload) => (dispatch) => {
     data: payload,
   })
     .then((r) => {
-      
+       console.log(r)
       if (r.data == "User already Exist Try to login ") {
         alert("User already Exist Please Try To Login");
       } else {
@@ -95,7 +95,7 @@ export const login = (payload) => (dispatch) => {
       "Content-Type": "application/json",
     },
     url: "/login",
-    baseURL: "http://localhost:8000",
+    baseURL: "https://topgearfashion.onrender.com",
     data: payload,
   })
     .then((r) => {

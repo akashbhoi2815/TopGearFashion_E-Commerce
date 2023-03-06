@@ -64,4 +64,4 @@ This is a collaborative project. We cloned the online website of TopGearFashion 
 
 ## Address
 
-<img src="./myntra-frontend/public/tgfaddress.png" />
+<img src="./myntra-frontend/public/tgfaddress.png" /> 

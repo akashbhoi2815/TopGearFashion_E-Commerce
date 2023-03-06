@@ -22,7 +22,9 @@ const Category = () => {
  
     useEffect(() => {
      if(category){
-        setSearchParams({categories:category});
+      const params={}
+      category && (params.category)
+        setSearchParams({params});
      }
     }, [category,setSearchParams])
     

@@ -14,7 +14,7 @@ const getWomenRequest = ( )=>{
 
 export const getMenData = (params)=>(dispatch)=>{
      dispatch(getMenRequest())
-     return axios.get("https://mock-json-server-2h17.onrender.com/tgfmensdata",params)
+     return axios.get("https://topgearfashion.onrender.com/tgf/mensdata",params)
        .then((r)=>{
         return dispatch({
             type:types.GETMEN_SUCCESS,
@@ -30,7 +30,7 @@ export const getMenData = (params)=>(dispatch)=>{
 }
 export const getwomenData = (params)=>(dispatch)=>{
     dispatch(getWomenRequest())
-    return axios.get("https://mock-json-server-2h17.onrender.com/tgfwomensdata",params)
+    return axios.get("https://topgearfashion.onrender.com/tgf/womensdata",params)
       .then((r)=>{
        return dispatch({
            type:types.GETWOMEN_SUCCESS,
